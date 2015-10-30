@@ -59,3 +59,4 @@ Maven 项目中引用了 MINA 的依赖，包如下错误：
 
 * 源码见：<https://github.com/waylau/apache-mina-2-user-guide-demos>
 * [Apache MINA 2 用户指南](https://github.com/waylau/apache-mina-2.x-user-guide)
+* <http://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html>
