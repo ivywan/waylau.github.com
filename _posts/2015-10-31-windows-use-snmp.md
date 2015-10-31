@@ -36,6 +36,28 @@ SNMP（Simple Network Management Protocol，简单网络管理协议）是 Inter
 
 ![](http://99btgc01.info/uploads/2015/10/002.png)
 
+## 安装 SNMP 测试工具
+
+SNMP 测试工具比较多，本文用了 [Paessler SNMP Tester](http://www.paessler.com/tools/snmptester)
+
+软件比较简单，解压运行 .exe 文件即可。在界面中输入设备 IP， 和自定义的 OID。本例中的 OID 为“1.3.6.1.2.1.1.1.0” ，用于获取系统基本信息。
+
+点击“Start”运行。
+
+结果为：
+
+	----------------------- New Test -----------------------
+	Paessler SNMP Tester 5.2.1
+	2015/10/31 17:11:48 (10 ms) : Device: 192.168.11.103
+	2015/10/31 17:11:48 (15 ms) : SNMP V1
+	2015/10/31 17:11:48 (20 ms) : Custom OID 1.3.6.1.2.1.1.1.0
+	2015/10/31 17:11:48 (28 ms) : SNMP Datatype: ASN_OCTET_STR
+	2015/10/31 17:11:48 (35 ms) : -------
+	2015/10/31 17:11:48 (41 ms) : Value: Hardware: Intel64 Family 6 Model 58 Stepping 9 AT/AT COMPATIBLE - Software: Windows Version 6.1 (Build 7601 Multiprocessor Free)
+	2015/10/31 17:11:48 (46 ms) : Done
+
+
+![](http://99btgc01.info/uploads/2015/10/004%281%29.jpg)
 
 ## 参考
 
