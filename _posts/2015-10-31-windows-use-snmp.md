@@ -61,5 +61,5 @@ SNMP 测试工具比较多，本文用了 [Paessler SNMP Tester](http://www.paes
 
 ## 参考
 
-* 源码见：<https://github.com/waylau/snmp4j-demos>
+* [基于Java 的 SNMP 实现](https://github.com/waylau/snmp4j-demos)
 * <https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol>
