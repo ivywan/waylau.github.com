@@ -14,7 +14,7 @@ tags: [Eclipse,Markdown]
 
 ## Eclipse Markdown Editor 的介绍
 
-Eclipse Markdown Editor 是一款 Eclipse 插件，可以实现 .md 和 .txt 文件的 Markdown 语法高亮，并提供 HTML 预览。经过测试，可以满足一些基本的 Markdown 语法。
+[Eclipse Markdown Editor](http://www.winterwell.com/software/markdown-editor.php) 是一款 Eclipse 插件，可以实现 .md 和 .txt 文件的 Markdown 语法高亮，并提供 HTML 预览。经过测试，可以满足一些基本的 Markdown 语法。
 
 ## 安装
 
