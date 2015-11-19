@@ -30,6 +30,8 @@ tags: [NW.js,Node.js]
 
 地址: <http://dl.nwjs.io/>
 
+截至目前（2015-11-19），各平台最新的下载版本为：
+
 * **v0.12.3:** (Jul 31, 2015, based off of IO.js v1.2.0, Chromium 41.0.2272.76): [release notes](https://groups.google.com/d/msg/nwjs-general/hhXCS4aXGV0/TUQmcu5XDwAJ)  
  * Linux: [32bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-ia32.tar.gz) / [64bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-linux-x64.tar.gz)
  * Windows: [32bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-ia32.zip) / [64bit](http://dl.nwjs.io/v0.12.3/nwjs-v0.12.3-win-x64.zip)
@@ -54,7 +56,11 @@ tags: [NW.js,Node.js]
 
 ## 快速入门
 
-创建 `index.html`:
+我们新建一个目录 `quick-start`，来代表项目名称。
+
+### 客户端代码
+
+在 `quick-start` 目录下，创建 `index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -72,7 +78,7 @@ tags: [NW.js,Node.js]
 </html>
 ```
 
-Create `package.json`:
+在 `quick-start` 目录下，创建 `package.json`:
 
 ```json
 {
@@ -82,23 +88,27 @@ Create `package.json`:
 }
 ```
 
+### 运行
+
 运行:  
 ```bash
 $ /path/to/nw .  (假设当前目录包含 'package.json')
 ```
 
-注意: 在 Windows 系统, 拖动包含 `package.json`文件夹到 `nw.exe` 来打开它。
+注意: 在 Windows 系统, 拖动包含 `package.json`文件夹 `quick-start` ，到 `nw.exe` 来打开它。
 
 注意：在 OSX 系统,可执行编译文件是在隐藏目录的 .app 文件内。为了在 OSX  运行 node-webkit , 输入:  
 `/path/to/nwjs.app/Contents/MacOS/nwjs .` *(假设当前目录包含 'package.json')*   
 
 ![](http://99btgc01.info/uploads/2015/11/nw.jpg)
 
-## 效果
+### 效果
 
 ![](http://99btgc01.info/uploads/2015/11/nw1.jpg)
 
-## 更多设置
+### 更多设置
+
+将 `quick-start` 复制为另外要给项目 `quick-start-window`。
 
 修改 `package.json` 来设置程序。
 
@@ -140,6 +150,45 @@ $ /path/to/nw .  (假设当前目录包含 'package.json')
 
 
 ![](http://99btgc01.info/uploads/2015/11/nw2.jpg)
+
+## 发布
+
+本节以 Windows 环境下为例。
+
+### 新建发布包
+
+将下载的 NW.js 文件解压，复制一份作为项目的发布包模板，本例名称为`nwjs-v0.12.3-win-x64`
+
+### 压缩
+
+将 `quick-start` 内的文件压缩成 .zip　文件 `quick-start.zip`，修改文件后缀为 `quick-start.nw` (这个是管方的说法，其实不该后缀 直接是 quick-start.zip 可以是可以)
+
+![](http://99btgc01.info/uploads/2015/11/001%281%29.jpg)
+
+
+![](http://99btgc01.info/uploads/2015/11/002..jpg)
+
+### 合成
+
+将 `quick-start.nw` 放入发布包 `nwjs-v0.12.3-win-x64`，
+
+![](http://99btgc01.info/uploads/2015/11/004.jpg)
+
+在命令下，切换到  `nwjs-v0.12.3-win-x64` 目录，并执行
+
+```
+copy /b nw.exe+quick-start.nw quick-start.exe
+```
+
+![](http://99btgc01.info/uploads/2015/11/005.jpg)
+
+此时，生成了可执行文件`quick-start.exe`，双击即可运行程序
+
+![](http://99btgc01.info/uploads/2015/11/006.jpg)
+
+### 删除冗余
+
+最终的发布包，未减少体积，可以删除项目用不到的冗余文件，由于`nw.exe`、`quick-start.nw`文件已经合成为了 `quick-start.exe`,故删之。又因为该项目简单，没有用到媒体库，可以删除`nwjc.exe`、`ffmpegsumo.dll`等 
 
 ## 源码
 
