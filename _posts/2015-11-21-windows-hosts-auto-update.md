@@ -66,3 +66,16 @@ ipconfig /flushdns
 * 第3句是指，刷新网络设置
 
 ![](http://99btgc01.info/uploads/2015/11/hosts.jpg)
+
+## 其他翻墙方式
+
+* [简单实现浏览国外著名网站的方法，不用梯子，修改本机的 hosts](http://www.waylau.com/simple-way-to-implement-browsing-famous-overseas-web-sites-without-the-ladder-gateway-dns-hosts/)
+* [用Heroku、snova-c4搭梯子上墙](http://www.waylau.com/heroku-snova-c4-cross-wall/)
+* [又一架梯子上墙利器--DNSCrypt](http://www.waylau.com/about-dnscrypt/)
+* [用 VPN Gate 翻墙科学上网](http://www.waylau.com/about-vpngate/)
+* [设置 VPN,通过 VPN 翻墙科学上网](http://www.waylau.com/vpn-setting/)
+* [用 Azure RemoteApp 翻墙科学上网](http://www.waylau.com/about-azure-remoteapp/)
+
+## 参考
+
+* [图书集合](https://github.com/waylau/books-collection)
