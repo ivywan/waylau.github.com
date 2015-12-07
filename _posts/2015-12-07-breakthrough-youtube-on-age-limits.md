@@ -25,7 +25,7 @@ YouTube 对视频进行了分级，某些“少儿不宜”的影片需要对用
 
 原始视频链接中的 <http://www.youtube.com/watch?v=dadasdadasd> ，dadasdadasd 就是这个影片的编号。
 
-对没错，方法就是<http://www.youtube.com/embed/[影片的编号]>
+对没错，方法就是`http://www.youtube.com/embed/[影片的编号]`
 
 这时候可以利用嵌入影片的手法绕过这个网页，浏览器输入
 
