@@ -22,3 +22,5 @@ permalink: /books/
 * [Java Servlet 3.1 规范](https://github.com/waylau/servlet-3.1-specification)
 * [JSSE 参考指南](https://github.com/waylau/jsse-reference-guide)
 * [NW.js 入门指南](https://github.com/waylau/nwjs-demos) 
+* [Apache Cordova 开发指南](https://github.com/waylau/cordova-dev-guide) 
+* [Java 编程要点](https://github.com/waylau/essential-java) 
