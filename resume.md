@@ -4,49 +4,74 @@ title: Resume
 permalink: /resume/
 ---
 
-## 柳伟卫_求职简历
+# 柳伟卫_求职简历
 
-### 联系方式
+## 联系方式
 
-- 手机：17051051662
-- Email：[waylau521@163.com](mailto:waylau521@163.com)
-- 微博：<http://weibo.com/waylau521>
-- 博客：<http://www.waylau.com>
-- Github：<https://github.com/waylau>
-
----
-
-## 个人信息
-
- - 柳伟卫/男/1987/中共党员/退伍军人
- - 本科/广东财经大学/软件工程专业
- - 工作年限：5年+
- - 期望职位：Java 开发/架构师/项目管理
- - 期望城市：杭州、惠州
+* 手机：17051051662
+* Email：[waylau521@163.com](mailto:waylau521@163.com)
+* 微博：<http://weibo.com/waylau521>
+* 博客：<http://www.waylau.com>
+* Github：<https://github.com/waylau>
 
 ---
 
-## 工作经历
+# 个人信息
+
+* 柳伟卫/男/1987/党员/退伍军人
+* 本科/广东财经大学/软件工程专业
+* 工作年限：5年+
+* 期望职位：Java 研发/架构/项目管理
+* 期望城市：杭州、惠州
+
+---
+
+# 工作经历
 （工作经历按逆序排列，最新的在最前边，按公司做一级分组，公司内按二级分组）
 
-### 广东迪奥技术有限公司 （2011.12-2016.1）
+## 广东迪奥技术有限公司 （2011.12-2016.1）
 
-### DEF项目 
+公司网站：<http://www.gddiao.com/>
+
+### 迪奥运维平台
+
 我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
 
 
-### GHI项目 
+### 企业能源管理中心
+
 我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
 
+### 成品油市场监管信息系统
 
-### 其他项目
+我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
 
-（每个公司写2~3个核心项目就好了，如果你有非常大量的项目，那么按分类进行合并，每一类选一个典型写出来。其他的一笔带过即可。）
+### 现场信息采集子系统
+
+我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
+
+### 数字陶瓷
+
+我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
+
+### 政府级能管中心
+
+我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
+
+### 东莞企业能管中心
+
+我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
+
+### 其他
+
+在该公司每年都被评为“优秀员工”。
 
  
-### 广州维动网络科技有限公司（ 2011年7月 ~ 2011年11月 ）
+## 广州维动网络科技有限公司（ 2011年7月 ~ 2011年11月 ）
 
-#### MNO项目 
+公司网站：<http://www.weedong.com/>
+
+### MNO项目 
 我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。
 
 
@@ -61,73 +86,45 @@ permalink: /resume/
 ---
 
 # 开源项目和作品
-（这一段用于放置工作以外的、可证明你的能力的材料）
+
+取自开源，用之开源。人人为我，我为人人。
 
 ## 开源项目
-（对于程序员来讲，没有什么比Show me the code能有说服力了）
 
- - [STU](http://github.com/yourname/projectname)：项目的简要说明，Star和Fork数多的可以注明
- - [WXYZ](http://github.com/yourname/projectname)：项目的简要说明，Star和Fork数多的可以注明
+- easyui-scaffold（前段开发脚手架）：<https://github.com/waylau/easyui-scaffold>，基于 Easyui 快速构建企业应用模型，实现模块化，易于扩展;
+- RestDemo：<https://github.com/waylau/RestDemo>。由浅入深，一步一步用示例展示了如何构建完整的 REST 服务;
+- spring-framework-4-reference : <https://github.com/waylau/spring-framework-4-reference>，《Spring Framework 4.x参考文档》中文翻译（包含了官方文档以及其他文章）；
+- 其他更多请移步至 <https://github.com/waylau>
 
-## 技术文章
-（挑选你写作或翻译的技术文章，好的文章可以从侧面证实你的表达和沟通能力，也帮助招聘方更了解你）
+## 书籍作品
 
-- [一个产品经理眼中的云计算：前生今世和未来](http://get.jobdeer.com/706.get)
-- [来自HeroKu的HTTP API 设计指南(翻译文章)](http://get.jobdeer.com/343.get) （ ```好的翻译文章可以侧证你对英文技术文档的阅读能力```）
+* 《REST 实战》：<https://github.com/waylau/rest-in-action>
+* 《Netty 实战(精髓)》：<https://github.com/waylau/essential-netty-in-action>
+* 《CSS3 教程》：<https://github.com/waylau/css3-tutorial>
+* 其他更多请移步至 <http://www.waylau.com/books/>
 
 ## 演讲和讲义
-（放置你代表公司在一些技术会议上做过的演讲，以及你在公司分享时制作的讲义）
 
-  - 2014架构师大会演讲：[如何通过Docker优化内部开发](http://jobdeer.com)
- - 9月公司内部分享：[云计算的前生今世](http://jobdeer.com)
+* 2015年7月，新员工培训，《前端培训CSS3&Bootstrap》：<http://www.waylau.com/ppt/CSS3&Bootstrap_20150703.pdf>
+* 2015年5月，公司技术，《EMSC架构剖析》:<http://www.waylau.com/ppt/EMSC_Architecture_201505023.pdf>
 
 # 技能清单
-（我一般主张将技能清单写入到工作经历里边去。不过很难完整，所以有这么一段也不错）
 
-以下均为我熟练使用的技能
+以下均为我经常使用的技能清单
 
-- Web开发：PHP/Hack/Node
-- Web框架：ThinkPHP/Yaf/Yii/Lavaral/LazyPHP
-- 前端框架：Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic
-- 前端工具：Bower/Gulp/SaSS/LeSS/PhoneGap
-- 数据库相关：MySQL/PgSQL/PDO/SQLite
-- 版本管理、文档和自动化部署工具：Svn/Git/PHPDoc/Phing/Composer
-- 单元测试：PHPUnit/SimpleTest/Qunit
-- 云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发
+- 服务端开发：Java/Golang/Node
+- 服务端框架：Spring/Jersey/Hibernate/MyBatis/Struts
+- 前端开发：Flex/AS3/HTML5/JS/CSS/SVG
+- 前端框架：jQuery/Bootstrap/Easyui/AngularJS
+- 前端工具：Bower/Grunt/Cordova
+- 数据库相关：MySQL/SQLServer/Oracle/H2
+- 单元测试：JUnit 
+- 管理工具：SVN/Git/Maven/Gradle/禅道
+- 云和开放平台：百度地图
 
 
 ---
 
 # 致谢
+
 感谢您花时间阅读我的简历，期待能有机会和您共事。
-
-###Specialties:
-
-* J2EE web programming development.
-* Flex/AS3 programming development.
-* HTML5/JS/CSS/SVG programming development.
-* Self-educated/Self-training.
-
-###Hobby:
-
-* Riding mountain bike.
-* Go travelling far away.
-* Watching science-fiction movies.
-* Learning English.
-
-###Contact:
-
-* blog:[www.waylau.com](http://www.waylau.com)
-* gmail: [waylau521@gmail.com](mailto:waylau521@gmail.com)
-* weibo: [waylau521](http://weibo.com/waylau521)
-* twitter: [waylau521](https://twitter.com/waylau521)
-* csdn: [kkkloveyou](http://blog.csdn.net/kkkloveyou)
-* oschina: [waylau](http://my.oschina.net/waylau)
-
-###Open source:
-
-* Github : [waylau](https://github.com/waylau)
-
-----
-
-[![新浪微博](http://service.t.sina.com.cn/widget/qmd/2117486514/c3e417d3/1.png)](http://weibo.com/u/2117486514?s=6uyXnP)
