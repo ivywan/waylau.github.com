@@ -22,7 +22,19 @@ permalink: /resume/
 * 本科/广东财经大学/软件工程专业
 * 工作年限：5年+
 * 期望职位：Java 研发/架构/项目管理
-* 期望城市：杭州、惠州
+* 期望城市：杭州、惠州、厦门、珠海
+
+---
+
+# 个人评价
+
+1. Java 语言扎实，熟悉 IO、多线程、集合等，对 JVM 原理有一定的了解；
+2. 5年及以上 Java SE/EE 开发的经验，熟悉 Spring/Jersey/Hibernate/MyBatis/Struts/MINA/Netty 等开源框架；
+3. 熟悉分布式系统的设计和应用，熟悉分布式、缓存、消息等机制；具备 RESTful 架构风格的系统设计经验；有实时数据采集、实时数据库、告警推送等设计研发经验；
+4. 掌握多线程及高性能的设计与编码及性能调优；有高并发应用开发经验；
+5. 掌握 Linux 操作系统和常用数据库（MySQL/SQLServer/H2）；对SQL优化有一定的经验；
+6. 爱好学习，做事细心，待人谦虚；
+7. 喜欢了解及尝试最新的技术，追求代码规范，爱好开源，乐于技术分享，能从技术趋势和思路上影响团队
 
 ---
 
@@ -87,7 +99,7 @@ permalink: /resume/
 
 # 开源项目和作品
 
-取自开源，用之开源。人人为我，我为人人。
+取自开源，回馈开源。人人为我，我为人人。
 
 ## 开源项目
 
@@ -115,12 +127,13 @@ permalink: /resume/
 - 服务端开发：Java/Golang/Node
 - 服务端框架：Spring/Jersey/Hibernate/MyBatis/Struts
 - 前端开发：Flex/AS3/HTML5/JS/CSS/SVG
-- 前端框架：jQuery/Bootstrap/Easyui/AngularJS
+- 前端框架：jQuery/Bootstrap/Easyui/AngularJS/Echarts
 - 前端工具：Bower/Grunt/Cordova
 - 数据库相关：MySQL/SQLServer/Oracle/H2
 - 单元测试：JUnit 
 - 管理工具：SVN/Git/Maven/Gradle/禅道
-- 云和开放平台：百度地图
+- Linux系统：CentOS 
+- 开放平台：百度地图
 
 
 ---
