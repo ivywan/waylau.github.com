@@ -32,7 +32,7 @@ permalink: /resume/
 2. 5年及以上 Java SE/EE 开发的经验，熟悉 Spring/Jersey/Hibernate/MyBatis/Struts/MINA/Netty 等开源框架；
 3. 熟悉分布式系统的设计和应用，熟悉分布式、缓存、消息等机制；具备 RESTful 架构风格的系统设计经验；有实时数据采集、实时数据库、告警推送等设计研发经验；
 4. 掌握多线程及高性能的设计与编码及性能调优；有高并发应用开发经验；
-5. 掌握 Linux 操作系统和常用数据库（MySQL/SQLServer/H2）；对SQL优化有一定的经验；
+5. 掌握 Linux 操作系统和常用数据库（MySQL/SQLServer）；对SQL优化有一定的经验；
 6. 爱好学习，做事细心，待人谦虚；
 7. 喜欢了解及尝试最新的技术，追求代码规范，爱好开源，乐于技术分享，能从技术趋势和思路上影响团队
 
@@ -79,7 +79,7 @@ permalink: /resume/
 在该公司每年都被评为“优秀员工”。
 
  
-## 广州维动网络科技有限公司（ 2011年7月 ~ 2011年11月 ）
+## 广州维动网络科技有限公司（2011.7-2011.11）
 
 公司网站：<http://www.weedong.com/>
 
@@ -117,23 +117,23 @@ permalink: /resume/
 
 ## 演讲和讲义
 
-* 2015年7月，新员工培训，《前端培训CSS3&Bootstrap》：<http://www.waylau.com/ppt/CSS3&Bootstrap_20150703.pdf>
-* 2015年5月，公司技术，《EMSC架构剖析》:<http://www.waylau.com/ppt/EMSC_Architecture_201505023.pdf>
+* 2015年7月，新员工培训《前端培训CSS3&Bootstrap》：<http://www.waylau.com/ppt/CSS3&Bootstrap_20150703.pdf>
+* 2015年5月，技术分享，《能源管理中心架构剖析》:<http://www.waylau.com/ppt/EMSC_Architecture_201505023.pdf>
 
 # 技能清单
 
 以下均为我经常使用的技能清单
 
-- 服务端开发：Java/Golang/Node
-- 服务端框架：Spring/Jersey/Hibernate/MyBatis/Struts
-- 前端开发：Flex/AS3/HTML5/JS/CSS/SVG
-- 前端框架：jQuery/Bootstrap/Easyui/AngularJS/Echarts
-- 前端工具：Bower/Grunt/Cordova
-- 数据库相关：MySQL/SQLServer/Oracle/H2
-- 单元测试：JUnit 
-- 管理工具：SVN/Git/Maven/Gradle/禅道
-- Linux系统：CentOS 
-- 开放平台：百度地图
+* 服务端开发：Java/Golang/Node
+* 服务端框架：Spring/Jersey/Hibernate/MyBatis/Struts
+* 前端开发：Flex/AS3/HTML5/JS/CSS/SVG
+* 前端框架：jQuery/Bootstrap/Easyui/AngularJS/Echarts
+* 前端工具：Bower/Grunt/Cordova
+* 数据库相关：MySQL/SQLServer/Oracle/H2
+* 单元测试：JUnit 
+* 管理工具：SVN/Git/Maven/Gradle/禅道
+* Linux系统：CentOS 
+* 开放平台：百度地图
 
 
 ---
