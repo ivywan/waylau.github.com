@@ -18,14 +18,5 @@ logo_image: "/images/logo.png"
 highlighter: pygments
 markdown: rdiscount
 permalink: /:title/
-paginate: 6
+paginate: 10
 paginate_path: page/:num
-
-markdown:      maruku
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-  fenced_code_blocks: true

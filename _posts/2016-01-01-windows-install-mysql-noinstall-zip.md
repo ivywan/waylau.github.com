@@ -64,27 +64,7 @@ mysqld --defaults-file=C:\Windows\my.ini --initialize
 
 其中 `--defaults-file` 指向了我们之前创建的 my.ini 文件
 
-{% highlight ruby %}
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-{% endhighlight %}
 
-ads
-
-```ruby
-def show
-  @widget = Widget(params[:id])
-  respond_to do |format|
-    format.html # show.html.erb
-    format.json { render json: @widget }
-  end
-end
-```
 
 ## 选择 MySQL server 类型
 ## 初始化 MySQL
