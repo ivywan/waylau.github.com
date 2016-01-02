@@ -74,6 +74,7 @@ def show
 end
 {% endhighlight %}
 
+ads
 
 ```ruby
 def show
