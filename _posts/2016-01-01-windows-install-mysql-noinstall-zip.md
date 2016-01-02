@@ -64,11 +64,40 @@ mysqld --defaults-file=C:\Windows\my.ini --initialize
 
 其中 `--defaults-file` 指向了我们之前创建的 my.ini 文件
 
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
 
 ## 选择 MySQL server 类型
 ## 初始化 MySQL
 ## 启动  MySQL server
 ## 加密默认用户账号
+
+## 问题
+
+```
+C:\Users\Administrator>mysqld --defaults-file=C:\Windows\my.ini --initialize
+mysqld: Can't create directory 'D:\mysqlData\data\' (Errcode: 2 - No such file o
+r directory)
+2016-01-01T15:08:10.531737Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is
+ deprecated. Please use --explicit_defaults_for_timestamp server option (see doc
+umentation for more details).
+2016-01-01T15:08:10.531737Z 0 [Warning] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'E
+RROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will
+be merged with strict mode in a future release.
+2016-01-01T15:08:10.531737Z 0 [Warning] 'NO_AUTO_CREATE_USER' sql mode was not s
+et.
+2016-01-01T15:08:10.534737Z 0 [ERROR] Aborting
+```
+
+时间（时区）冲突
+
 
 ## 参考
 
