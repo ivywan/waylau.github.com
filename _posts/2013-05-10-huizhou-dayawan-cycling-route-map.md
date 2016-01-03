@@ -13,4 +13,3 @@ categories: [Outdoor]
 4.2 或到澳霞立交 左转，进入石化大道，直达霞冲镇
 5.过了霞冲镇直走约3公里就是金海岸海滨浴场
 
-<a href="http://www.waylau.com/336/%e6%83%a0%e5%b7%9e%e8%87%b3%e9%9c%9e%e5%86%b2%e9%95%87/" rel="attachment wp-att-337"><img alt="惠州至霞冲镇" src="http://www.waylau.com/wp-content/uploads/2013/05/惠州至霞冲镇-264x300.jpg" width="264" height="300" /></a>
