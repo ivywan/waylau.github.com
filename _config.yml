@@ -15,8 +15,9 @@ baidutongji_id: 28cf5fa48a599e39c5cc760931de942f
 rss_url: "/feed.xml"
 logo_image: "/images/logo.png"
 # Build settings
-highlighter: pygments
-markdown: rdiscount
+gems: [jekyll-paginate]
+markdown:    rdiscount
+highlighter: rouge
 permalink: /:title/
-paginate: 10
+paginate: 8
 paginate_path: page/:num
