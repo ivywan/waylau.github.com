@@ -10,6 +10,16 @@ tags: [Netty]
 
 本文介绍了 Netty 超时机制的原理，以及如何在连接闲置时发送一个心跳来维持连接。
 
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+
 <!-- more -->
 
 ## Netty 超时机制的介绍
