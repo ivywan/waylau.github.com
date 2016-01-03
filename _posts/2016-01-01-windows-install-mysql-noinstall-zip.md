@@ -26,7 +26,7 @@ tags: [MySQL,安装]
 2. 选择安装位置。传统上，MySQL server 安装在 `C:\mysql`。 MySQL 的安装向导（MySQL Installer）安装 MySQL 在`C:\Program Files\MySQL`。如果您没有在 `C:\mysql` 安装 MySQL，你必须在启动或者在  option file 文件中指定的安装目录路径。本例安装在`C:\Program Files\MySQL`目录。
 3. 将安装包解压后放到安装目录下，如下：
 
-![](http://a.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=f40f5365d188d43ff4a991f74d25a326/9345d688d43f8794accebc3ed51b0ef41bd53ae8.jpg?referer=a368c26f7ff0f73681e9793186a6&x=.jpg)
+![](http://a.hiphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=f40f5365d188d43ff4a991f74d25a326/9345d688d43f8794accebc3ed51b0ef41bd53ae8.jpg?referer=a368c26f7ff0f73681e9793186a6&x=.jpg)
 
 
 ## 创建配置文件
@@ -53,7 +53,7 @@ MySQL 5.7.6 之后，noinstall 安装包并没有提供 data 目录，所以要�
 
 本例将 `C:\Program Files\MySQL\mysql-5.7.10-winx64\bin`添加到 PATH,如下：
 
-![](http://a.picphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=92f21ca8d33f8794d7ff482be2207fc9/d788d43f8794a4c27da9183b09f41bd5ad6e3913.jpg?referer=03f8b2d0f036afc3571b0b5587f1&x=.jpg)
+![](http://a.hiphotos.baidu.com/album/s%3D550%3Bq%3D90%3Bc%3Dxiangce%2C100%2C100/sign=92f21ca8d33f8794d7ff482be2207fc9/d788d43f8794a4c27da9183b09f41bd5ad6e3913.jpg?referer=03f8b2d0f036afc3571b0b5587f1&x=.jpg)
 
 ## 初始化 data 目录
 
