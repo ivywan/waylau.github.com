@@ -18,7 +18,7 @@ logo_image: "/images/logo.png"
 gems: [jekyll-paginate]
 markdown: rdiscount
 pygments: true
-highlighter: rouge
+highlighter: pygments
 permalink: /:title/
 paginate: 8
 paginate_path: page/:num
