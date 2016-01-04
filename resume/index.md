@@ -6,7 +6,7 @@ permalink: /resume/
 
 # 柳伟卫的简历
 
-* Tel：(+86)17051051662
+* Tel：(+86)17051061662
 * Email：[waylau521@163.com](mailto:waylau521@163.com)
 * Blog：<http://www.waylau.com>
 * Github：<https://github.com/waylau>
