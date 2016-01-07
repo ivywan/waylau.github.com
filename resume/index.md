@@ -29,8 +29,8 @@ permalink: /resume/
 * 5年及以上 Java SE/EE 开发的经验，熟悉 Spring/Jersey/Hibernate/MyBatis/Struts/POI/MINA/Netty 等开源框架；熟悉 Flex/AS3/HTML5/JS 等客户端技术的开发；具有相关性能优化经验。
 * 多年能耗在线监测、能源管理中心系统的研发工作；具备 RESTful 架构风格的系统设计经验；有分布式系统、并发处理、实时数据采集、实时数据库、告警消息推送等系统的设计开发及性能调优经验；
 * 掌握 Linux（CentOS/RHEL） 操作系统和常用数据库（MySQL/SQLServer）；对SQL优化有一定的经验；
-* 谦虚好学，认真细心，酷爱户外运动，讲究团队精神；
-* 喜欢了解及尝试最新的技术，追求代码规范，爱好开源，乐于技术分享，对企业忠诚；
+* 谦虚好学，认真细心，酷爱[户外运动](http://www.waylau.com/categories/#outdoor)，讲究团队精神；
+* 喜欢了解及尝试最新的技术，追求代码规范，爱好[开源](https://github.com/waylau)，乐于技术分享，对企业忠诚；
 
 ---
 
