@@ -139,6 +139,7 @@ permalink: /resume/
 * 管理工具：SVN/Git/Maven/Gradle/禅道
 * 操作系统：CentOS/WindowsServer/VirtualBox 
 * 开放平台：百度地图/腾讯云
+* 语言方言：英文/普通话/粤语
 
 ---
 

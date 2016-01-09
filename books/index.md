@@ -23,3 +23,4 @@ permalink: /books/
 * [JSSE 参考指南](https://github.com/waylau/jsse-reference-guide)
 * [Apache Cordova 开发指南](https://github.com/waylau/cordova-dev-guide) 
 * [Java 编程要点](https://github.com/waylau/essential-java) 
+* [Java 虚拟机规范](https://github.com/waylau/java-virtual-machine-specification) 
