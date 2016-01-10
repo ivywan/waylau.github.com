@@ -124,8 +124,8 @@ permalink: /resume/
     * [更多](http://www.waylau.com/books)
     
 * 演讲和讲义
-    * 2015年7月，新员工培训《前端培训CSS3&Bootstrap》：<http://www.waylau.com/ppt/CSS3&Bootstrap_20150703.pdf>
-    * 2015年5月，技术分享，《能源管理中心架构剖析》:<http://www.waylau.com/ppt/EMSC_Architecture_201505023.pdf>
+    * 2015年7月，新员工培训《前端培训CSS3&Bootstrap》：<http://www.waylau.com/slides/CSS3&Bootstrap_20150703.pdf>
+    * 2015年5月，技术分享，《能源管理中心架构剖析》:<http://www.waylau.com/slides/EMSC_Architecture_201505023.pdf>
 
 ## 技能清单
 
