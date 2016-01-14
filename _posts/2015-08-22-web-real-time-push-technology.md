@@ -101,4 +101,4 @@ WebSocket 相较 SSE 最大的优势在于它是双向交流的，这意味向�
 * Data Push Apps with HTML5 SSE（by Darren Cook）
 * <http://www.ibm.com/developerworks/cn/web/wa-lo-comet/>
 * <https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS>
-
+* <http://stackoverflow.com/questions/11077857/what-are-long-polling-websockets-server-sent-events-sse-and-comet>
