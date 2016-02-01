@@ -28,7 +28,8 @@ TCP 是基于连接的协议，也就是说，在正式收发数据前，必须�
 
 三次“握手”的目的是使数据包的发送和接收同步，经过三次“对话”之后，主机 A 才向主机 B 正式发送数据。
 
-![](http://b303.photo.store.qq.com/psb?/c152afc5-e83c-42b3-9779-3008bbfd9eb8/pO3vXjI0xFO4bpuAELBz5BXr*BOdhBViaDfpcPS8LSs!/b/Ye86nbRrCQAAYonNobRLCQAA&ek=1&kp=1&pt=0&su=0154437137&sce=0-12-12&rf=2-9)
+![](http://i4.tietuku.com/988e26b06bb5620d.jpg)
+
 
 ### 四次分手
 
@@ -41,7 +42,9 @@ TCP 是基于连接的协议，也就是说，在正式收发数据前，必须�
 
 TCP 采用四次分手关闭连接如图2所示。
 
-![](http://b303.photo.store.qq.com/psb?/c152afc5-e83c-42b3-9779-3008bbfd9eb8/WbGDB9ewAnjDDJ6ImIKv89OhBtNHRTmeiPYiWNgrRuc!/b/YWu2m7QXCQAAYrlrqbQFCQAA&ek=1&kp=1&pt=0&su=05415601&sce=0-12-12&rf=2-9)
+![](http://i4.tietuku.com/13ca9b57a8c7fb2f.jpg)
+
+
 
 ### 为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？ 
 
@@ -62,7 +65,8 @@ TCP 采用四次分手关闭连接如图2所示。
 
 ### 常用状态描述
 
-![](http://b301.photo.store.qq.com/psb?/c152afc5-e83c-42b3-9779-3008bbfd9eb8/xwsxGfO03s2YRHor2zOAIJI78WwRV*10du5eUNWYw4s!/b/YXO9drPtIAAAYvGxdrMTIQAA&ek=1&kp=1&pt=0&su=020610481&sce=0-12-12&rf=2-9)
+![](http://i4.tietuku.com/0c6b2441675b4bd5.jpg)
+
 
 ## 参考：
 
