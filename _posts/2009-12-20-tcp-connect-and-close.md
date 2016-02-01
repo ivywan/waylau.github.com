@@ -11,7 +11,7 @@ tags: [Web,TCP]
    
  <!-- more -->
 
-### TCP
+## TCP
 
 在互联网上之间的通信交流，一般是基于 TCP  (Transmission Control Protocol，传输控制协议) 或者 UDP (User Datagram Protocol，用户数据报协议) 。两者的一个重要区别是，TCP 是面向连接提供端到端可靠的数据流(flow of data)。
 
@@ -63,3 +63,7 @@ TCP 采用四次分手关闭连接如图2所示。
 ### 常用状态描述
 
 ![](http://b301.photo.store.qq.com/psb?/c152afc5-e83c-42b3-9779-3008bbfd9eb8/xwsxGfO03s2YRHor2zOAIJI78WwRV*10du5eUNWYw4s!/b/YXO9drPtIAAAYvGxdrMTIQAA&ek=1&kp=1&pt=0&su=020610481&sce=0-12-12&rf=2-9)
+
+## 参考：
+
+* 《TCP/IP详解-卷1》第18章《TCP连接的建立与终止》
