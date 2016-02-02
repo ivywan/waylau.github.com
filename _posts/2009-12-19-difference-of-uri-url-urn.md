@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 详解 URI、URL、URN 的联系和区别
+title: URI、URL、URN 的联系和区别
 date: 2009-12-19 00:22
 author: admin
 comments: true
@@ -46,7 +46,7 @@ URL 是一种 URI，它标识一个互联网资源，并指定对其进行操作
 * urn:oasis:names:specification:docbook:dtd:xml:4.1.2
 * /other/link.html （相对的 URL,只在另外一个 URL 的上下文有用）
 
-下面是一些 URL 的例子
+下面是一些 URN 的例子
 
 * urn:isbn:0451450523 （其ISBN编号，以确定一本书）
 * urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66 （一个全局唯一标识符）
