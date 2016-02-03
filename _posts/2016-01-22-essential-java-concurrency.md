@@ -1219,8 +1219,8 @@ class AtomicCounter {
     
 ## 源码
 
-本章例子的源码，可以在 <https://github.com/waylau/essential-java> 中 com.waylau.essentialjava.concurrency 包下找到。
+本章例子的源码，可以在 <https://github.com/waylau/essential-java> 中 `com.waylau.essentialjava.concurrency` 包下找到。
 
 ## 参考
 
-* [《Java 编程要点》](https://github.com/waylau/essential-java)
+* 更多内容可移步至笔者所著开源书[《Java 编程要点》](https://github.com/waylau/essential-java)

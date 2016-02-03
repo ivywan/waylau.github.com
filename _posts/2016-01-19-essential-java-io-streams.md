@@ -662,4 +662,4 @@ ob1 和 ob2 都是相同对象的引用。
 
 ## 参考
 
-* [《Java 编程要点》](https://github.com/waylau/essential-java)
+* 更多内容可移步至笔者所著开源书[《Java 编程要点》](https://github.com/waylau/essential-java)
