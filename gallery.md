@@ -12,7 +12,7 @@ permalink: /gallery/
 <a href="/images/2007002.jpg" data-lightbox="example-set" data-title="2007002,创业协会"><img class="example-image" src="/images/s/2007002.jpg" alt="" /></a>
 <a href="/images/200711.jpg" data-lightbox="example-set" data-title="200711,锻炼"><img class="example-image" src="/images/s/200711.jpg" alt="" /></a>
 <a href="/images/2008.jpg" data-lightbox="example-set" data-title="2008,四川犍为,77160部队"><img class="example-image" src="/images/s/2008.jpg" alt="" /></a>
-<a href="/images/2009.jpg" data-lightbox="example-set" data-title="2009，西昌，西南使命-2009"><img class="example-image" src="/images/s/2009.jpg" alt="" /></a>
+<a href="/images/2009.jpg" data-lightbox="example-set" data-title="2009,西昌,西南使命-2009"><img class="example-image" src="/images/s/2009.jpg" alt="" /></a>
 <a href="/images/20090524.jpg" data-lightbox="example-set" data-title="20090524,靶场"><img class="example-image" src="/images/s/20090524.jpg" alt="" /></a>
 <a href="/images/20091129.jpg" data-lightbox="example-set" data-title="20091129,退伍前夕"><img class="example-image" src="/images/s/20091129.jpg" alt="" /></a>
 <a href="/images/20100125.jpg" data-lightbox="example-set" data-title="20100125,杭州西湖"><img class="example-image" src="/images/s/20100125.jpg" alt="" /></a>
