@@ -10,6 +10,8 @@ tags: [Java,try-with-resources,exception,JDK9]
 
 本文详细介绍了自 JDK 7 引入的 try-with-resources 语句的原理和用法，以及介绍了 JDK 9 对 try-with-resources 的改进，使得用户可以更加方便、简洁的使用 try-with-resources 语句。
 
+<!-- more -->
+
 ## 在 JDK 7 之前，资源需要手动关闭。
 
 例如下面一个很常见的文件操作的例子：
