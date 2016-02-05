@@ -17,6 +17,8 @@ logo_image: "/images/logo.png"
 # Build settings
 gems: [jekyll-paginate]
 markdown: kramdown
+kramdown:
+    extensions: ["fenced_code_blocks"]
 highlighter: rouge
 permalink: /:title/
 paginate: 8
