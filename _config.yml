@@ -16,10 +16,8 @@ rss_url: "/feed.xml"
 logo_image: "/images/logo.png"
 # Build settings
 gems: [jekyll-paginate]
-markdown: kramdown
-kramdown:
-    extensions: ["fenced_code_blocks"]
-highlighter: rouge
+markdown: rdiscount
+highlighter: pygments
 permalink: /:title/
 paginate: 8
 paginate_path: page/:num
