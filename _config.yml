@@ -16,7 +16,7 @@ rss_url: "/feed.xml"
 logo_image: "/images/logo.png"
 # Build settings
 gems: [jekyll-paginate]
-markdown: rdiscount
+markdown: kramdown
 highlighter: rouge
 permalink: /:title/
 paginate: 8
