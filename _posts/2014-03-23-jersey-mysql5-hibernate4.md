@@ -4,8 +4,8 @@ title: 用Jersey构建RESTful服务5--Jersey+MySQL5.6+Hibernate4.3
 date: 2014-03-23 05:04 
 author: admin 
 comments: true
-categories: [Java, Jersey]
-tags: [Java, Jersey, REST]
+categories: [Java, Jersey, REST]
+tags: [Java, Jersey, RESTful]
 ---
 #一、总体说明
 

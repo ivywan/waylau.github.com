@@ -4,8 +4,8 @@ title: 用Jersey构建RESTful服务3--JAVA对象转成JSON输出
 date: 2014-03-17 05:04 
 author: admin 
 comments: true
-categories: [Java, Jersey]
-tags: [Java, Jersey, REST]
+categories: [Java, Jersey, REST]
+tags: [Java, Jersey, RESTful]
 ---
 #一、 总体说明
 

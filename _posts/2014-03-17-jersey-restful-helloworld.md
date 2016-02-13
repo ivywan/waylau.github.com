@@ -4,8 +4,8 @@ title: 用Jersey构建RESTful服务1--HelloWorld
 date: 2014-03-17 03:04 
 author: admin 
 comments: true
-categories: [Java, Jersey]
-tags: [Java, Jersey, REST]
+categories: [Java, Jersey, REST]
+tags: [Java, Jersey, RESTful]
 ---
 #一、环境 
 * 1.Eclipse Juno R2 

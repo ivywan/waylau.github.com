@@ -5,7 +5,7 @@ date: 2014-07-25 03:24
 author: admin
 comments: true
 categories: [Java,Jersey,REST,Spring]
-tags: [Java,Jersey,REST]
+tags: [Java, Jersey, RESTful,Spring]
 ---
 #一、总体说明
 

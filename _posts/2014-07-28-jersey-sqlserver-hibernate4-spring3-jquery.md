@@ -5,7 +5,7 @@ date: 2014-07-28 03:24
 author: admin
 comments: true
 categories: [Java,Jersey,REST,jQuery]
-tags: [Java,Jersey,REST,jQuery]
+tags: [Java, Jersey, RESTful,jQuery]
 ---
 #一、总体说明
 

@@ -5,7 +5,7 @@ date: 2014-07-31 03:24
 author: admin
 comments: true
 categories: [Java,Jersey,REST,AngularJS]
-tags: [Java,Jersey,REST,AngularJS]
+tags: [Java,Jersey,RESTfull,AngularJS]
 ---
 #一、总体说明
 

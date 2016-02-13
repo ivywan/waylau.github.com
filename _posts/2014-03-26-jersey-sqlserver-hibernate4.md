@@ -5,7 +5,7 @@ date: 2014-03-26 03:24
 author: admin
 comments: true
 categories: [Java, Jersey, REST]
-tags: [Java, Jersey, REST]
+tags: [Java, Jersey, RESTful]
 ---
 #一、总体说明
 
