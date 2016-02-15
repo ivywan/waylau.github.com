@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Stay Hungry,Stay Foolish！Steve Jobs 演讲的三点感悟
+title: Stay Hungry,Stay Foolish！Steve Jobs 毕业演讲的三点感悟
 date: 2016-02-14 02:41
 author: admin
 comments: true
 categories: [Soul]
-tags: [Soul,Steve Jobs,斯坦福大学,演讲,感悟]
+tags: [Soul,Steve Jobs,毕业,演讲,感悟]
 ---
 
 Steve Jobs 于2005年6月12号在斯坦福大学的毕业典礼上面的演讲，主要谈及了他人生中的三点感悟:因果、得失、死亡。最后以 “Stay Hungry. Stay Foolish.”总结。十年之后再看他当年的演讲视频，仍觉得感概万分。
