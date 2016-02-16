@@ -6,7 +6,7 @@ permalink: /books/
 
 ##以下是作者的书籍作品
 
-* [Apache Shiro 1.2.x 参考手册](http://waylau.com/apache-shiro-1-2-x-reference/)
+* [Apache Shiro 1.2.x 参考手册](http://waylau.com/apache-shiro-1.2.x-reference/)
 * [Jersey 2.x 用户指南](https://github.com/waylau/Jersey-2.x-User-Guide)
 * [Gradle 2 用户指南](https://github.com/waylau/Gradle-2-User-Guide)
 * [Github 帮助文档](https://github.com/waylau/github-help)
@@ -16,7 +16,7 @@ permalink: /books/
 * [REST 实战](https://github.com/waylau/rest-in-action)
 * [Netty 实战(精髓)](http://waylau.com/essential-netty-in-action)
 * [Java 编码规范](http://waylau.com/java-code-conventions)
-* [Apache MINA 2 用户指南](http://waylau.com/apache-mina-2.x-user-guide)
+* [Apache MINA 2 用户指南](https://github.com/waylau/apache-mina-2.x-user-guide)
 * [CSS3 教程](https://github.com/waylau/css3-tutorial)
 * [H2 Database 教程](https://github.com/waylau/h2-database-doc)
 * [Java Servlet 3.1 规范](https://github.com/waylau/servlet-3.1-specification)
