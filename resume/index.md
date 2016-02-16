@@ -8,7 +8,7 @@ permalink: /resume/
 
 * Tel：(+86)17051061662
 * Email：[waylau521@163.com](mailto:waylau521@163.com)
-* Blog：<http://www.waylau.com>
+* Blog：<http://waylau.com>
 * Github：<https://github.com/waylau>
 
 ---
@@ -121,11 +121,11 @@ permalink: /resume/
     * [《REST 实战》](https://github.com/waylau/rest-in-action)：基于 Jersey 构建 RESTful 服务
     * [《Netty 实战(精髓)》](https://github.com/waylau/essential-netty-in-action)：对 Norman Maurer 的 《Netty in Action》的一个精简
     * [《CSS3 教程》](https://github.com/waylau/css3-tutorial)：一本关于 CSS3 的开源教程
-    * [更多](http://www.waylau.com/books)
+    * [更多](http://waylau.com/books)
     
 * 演讲和讲义
-    * 2015年7月，新员工培训《前端培训CSS3&Bootstrap》：<http://www.waylau.com/slides/CSS3&Bootstrap_20150703.pdf>
-    * 2015年5月，技术分享，《能源管理中心架构剖析》:<http://www.waylau.com/slides/EMSC_Architecture_201505023.pdf>
+    * 2015年7月，新员工培训《前端培训CSS3&Bootstrap》：<http://waylau.com/slides/CSS3&Bootstrap_20150703.pdf>
+    * 2015年5月，技术分享，《能源管理中心架构剖析》:<http://waylau.com/slides/EMSC_Architecture_201505023.pdf>
 
 ## 技能清单
 
