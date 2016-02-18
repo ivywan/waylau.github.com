@@ -4,10 +4,10 @@ title: Mockito 简明教程
 date: 2016-02-16 02:41
 author: admin
 comments: true
-categories: [Mockito,TDD]
-tags: [Mockito,TDD,简明教程,入门,Mocking]
+categories: [Mockito,TDD,Java]
+tags: [Mockito,TDD,简明教程,入门,Mock,Java]
 ---
-Mock 测试是单元测试的重要方法之一。本文介绍了基于 Java 语言的 Mocking 测试框架 -- Mockito 的使用。
+Mock 测试是单元测试的重要方法之一。本文介绍了基于 Java 语言的 Mock 测试框架 -- Mockito 的使用。
 
 <!-- more -->
 
