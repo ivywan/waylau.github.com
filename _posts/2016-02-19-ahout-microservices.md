@@ -50,9 +50,11 @@ SOA 需要对整个系统进行规范，而 MSA 每个服务都可以有自己�
 
 ## 如何构建 Microservices
 
-真是一个大话题，本文不会涉及。市面上能看到的书籍有：
+真是一个大话题，本文不会详细涉及。笔者在《[REST 实战](https://github.com/waylau/rest-in-action/)》的 “使用 Java SE 部署环境”一章节中，写一个结合 Jetty 、Tomcat、Jersey 等技术，实现了 REST API 的Microservices 入门例子。
 
-* 《[Building Microservices](http://book.douban.com/subject/25881698/)》（Sam Newman）
+如果 Microservices 抱有兴趣，可以市面上的书籍：
+
+* [Building Microservices](http://book.douban.com/subject/25881698/)》（Sam Newman）
 * 《[Microservices: Patterns and Applications](http://book.douban.com/subject/26385465/)》（Lucas Krause ）
 * 《[微服务架构与实践](http://book.douban.com/subject/26693152/)》（王磊）
 
@@ -60,3 +62,4 @@ SOA 需要对整个系统进行规范，而 MSA 每个服务都可以有自己�
 
 * <http://www.infoq.com/cn/articles/enterprise-core-systems-transformation-practice/>
 * <http://martinfowler.com/articles/microservices.html>
+* 《[REST 实战](https://github.com/waylau/rest-in-action/)》
