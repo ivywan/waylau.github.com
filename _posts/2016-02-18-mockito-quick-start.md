@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mockito 简明教程
-date: 2016-02-16 02:41
+date: 2016-02-18 02:41
 author: admin
 comments: true
 categories: [Mockito,TDD,Java]
@@ -29,15 +29,15 @@ Mock 最大的功能是帮你把单元测试的耦合分解开，如果你的代
 
 ### Mock 对象使用范畴
 
-真实对象具有不可确定的行为，产生不可预测的效果，（如：股票行情，天气预报） 真实对象很难被创建的 真实对象的某些行为很难被触发 真实对象实际上还不存在的（和其他开发小组或者和新的硬件打交道）等等.
+真实对象具有不可确定的行为，产生不可预测的效果，（如：股票行情，天气预报） 真实对象很难被创建的 真实对象的某些行为很难被触发 真实对象实际上还不存在的（和其他开发小组或者和新的硬件打交道）等等
 
 ### 使用 Mock 对象测试的关键步骤
 
-使用一个接口来描述这个对象 在产品代码中实现这个接口 在测试代码中实现这个接口 在被测试代码中只是通过接口来引用对象，所以它不知道这个引用的对象是真实对象。还是 Mock 对象。
+使用一个接口来描述这个对象 在产品代码中实现这个接口 在测试代码中实现这个接口 在被测试代码中只是通过接口来引用对象，所以它不知道这个引用的对象是真实对象,还是 Mock 对象。
  
 ## Java Mock 测试 
 
-目前，在 Java 阵营中主要的 Mock 测试工具有 [Mockito](http://mockito.org)，JMock，MockCreator，Mockrunner，EasyMock，MockMaker 等。
+目前，在 Java 阵营中主要的 Mock 测试工具有 [Mockito](http://mockito.org)，[JMock](http://www.jmock.org)，[EasyMock](http://easymock.org/) 等。
 
 关于这些框架的比较，不是本文的重点。本文着重介绍 Mockito 的使用。
 
