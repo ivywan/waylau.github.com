@@ -9,7 +9,7 @@ tags: [Microservices,微服务]
 ---
 自 2014 年始，Microservices（微服务）一词越来越火爆，不谈 Microservices 彷佛就 out 了。那么什么是 Microservices？Microservices 架构与传统的架构有什么区别？何时应该采用 Microservices？如何构建 Microservices？
 
-本文，就针对上述提到的问题，来揭开 Microservices 的神秘面纱。
+本文，就针对上述提到的问题，来简单介绍下 Microservices。
 
 <!-- more -->
 
