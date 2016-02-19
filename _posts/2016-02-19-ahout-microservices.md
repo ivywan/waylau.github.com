@@ -54,7 +54,7 @@ SOA 需要对整个系统进行规范，而 MSA 每个服务都可以有自己�
 
 如果 Microservices 抱有兴趣，可以市面上的书籍：
 
-* [Building Microservices](http://book.douban.com/subject/25881698/)》（Sam Newman）
+* 《[Building Microservices](http://book.douban.com/subject/25881698/)》（Sam Newman）
 * 《[Microservices: Patterns and Applications](http://book.douban.com/subject/26385465/)》（Lucas Krause ）
 * 《[微服务架构与实践](http://book.douban.com/subject/26693152/)》（王磊）
 
