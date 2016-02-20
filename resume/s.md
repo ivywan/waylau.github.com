@@ -95,7 +95,7 @@ permalink: /resume/s
 取自开源，回馈开源。人人为我，我为人人。
 
 * 开源项目：<https://github.com/waylau>
-* 书籍作品: <http://waylau.com/books>  
+* 书籍作品：<http://waylau.com/books>  
 
 ## 技能清单
 
