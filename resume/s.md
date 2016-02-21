@@ -1,7 +1,5 @@
 ---
 layout: page
-title: Resume
-permalink: /resume/s
 ---
 # 柳伟卫的简历
 

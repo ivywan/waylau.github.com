@@ -1,5 +1,4 @@
 
-
 # Memory of youth
 
 <a href="/images/2006.jpg" data-lightbox="example-set" data-title="2006,广东商学院,英语文化节-超越时空的爱恋"><img class="example-image" src="/images/s/2006.jpg" alt=""/></a>
