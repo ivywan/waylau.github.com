@@ -15,19 +15,21 @@ permalink: /resume/
 
 ## 个人信息
 
-* 柳伟卫/男/1987/党员/退伍军人
-* 本科/广东财经大学/软件工程2006级
-* 工作年限：5年+
+* 柳伟卫/男/1987/已婚/共党/退伍军人
+* 全日制本科/广东财经大学/软件工程2006级
+* 工作年限：5年+ 。包括系统架构3年+/项目管理3年+
 * 期望职位：Java 开发/架构/项目管理
 * 期望城市：杭州、惠州、珠海、深圳、广州
+* 期望公司：5天制、非外包、有明确的发展理念、有节操
 
 ---
 
 ## 个人评价
 
 * Java 语言扎实，熟悉 IO、多线程、集合、网络编程等，了解 JVM 原理；
-* 5年及以上 Java SE/EE 开发的经验，熟悉 Spring/Jersey/Hibernate/MyBatis/Struts/POI/MINA/Netty 等开源框架；熟悉 Flex/AS3/HTML5/JS 等客户端技术的开发；具有相关性能优化经验。
-* 多年管理节能、能耗在线监测、能源管理中心系统的设计与研发工作；具备 RESTful 架构风格的设计经验；有分布式系统、并发处理、实时数据采集、实时数据库、告警消息推送等系统的设计开发及性能调优经验；
+* 5年及以上 Java SE/EE 开发的经验，熟悉 Spring/Jersey/Hibernate/MyBatis/Struts/POI/MINA/Netty 等开源框架，熟悉 Flex/AS3/HTML5/JS/Bootstrap/CSS3/AngularJS/JQuery 等客户端技术的开发，并具备将上述技术进行整合架构；具有相关性能优化经验；具备快速解决技术问题的能力；
+* 多年管理节能、能耗在线监测、能源管理中心系统、工业自动化数据采集的设计与研发工作，熟悉相关行业标准、规范；
+* 推崇敏捷、TDD、DevOps 等开发方式；具备 REST 架构风格的设计经验；有微服务、分布式系统、并发处理、实时数据采集、实时数据库、告警消息推送等系统的设计开发及性能调优经验；
 * 掌握 Linux（CentOS/RHEL） 操作系统和常用数据库（MySQL/SQLServer）；对SQL优化有一定的经验；
 * 谦虚好学，认真细心，酷爱[户外运动](http://www.waylau.com/categories/#outdoor)，讲究团队精神；
 * 喜欢了解及尝试最新的技术，追求代码规范，爱好[开源](https://github.com/waylau)，乐于技术分享，对企业忠诚；
@@ -129,13 +131,13 @@ permalink: /resume/
 
 ## 技能清单
 
-* 服务端开发：Java/Golang/Node
+* 服务端开发：Java/Golang
 * 服务端框架：Spring/Jersey/Hibernate/POI/MyBatis/Struts/MINA/Netty
 * 前端开发：Flex/AS3/HTML5/JS/CSS/SVG
 * 前端框架：jQuery/Bootstrap/EasyUI/AngularJS/Echarts
 * 前端工具：Bower/Grunt/Cordova
 * 数据库相关：MySQL/SQLServer/Oracle/H2
-* 单元测试：JUnit 
+* 单元测试：JUnit/Mockito
 * 管理工具：SVN/Git/Maven/Gradle/禅道
 * 操作系统：CentOS/WindowsServer/VirtualBox 
 * 开放平台：百度地图/腾讯云
