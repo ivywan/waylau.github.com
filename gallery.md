@@ -1,8 +1,4 @@
----
-layout: gallery
-title: Gallery
-permalink: /gallery/
----
+
 
 # Memory of youth
 
