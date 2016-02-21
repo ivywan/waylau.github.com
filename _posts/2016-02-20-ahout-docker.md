@@ -77,7 +77,7 @@ Microservices（微服务） 依赖于“基础设施自动化”，而 Docker �
 * 《[Docker in Action](http://book.douban.com/subject/26409789/)》（Jeff Nickoloff）
 * 《[Using docker](http://book.douban.com/subject/26423831/)》（Adrian Mouat ）
 
-免费的书籍有：
+《[给程序员的开源、免费图书集合](https://github.com/waylau/books-collection)》收录了几本免费的书籍有：
 
 * 《[Docker —— 从入门到实践](https://github.com/yeasy/docker_practice)》
 * 《[Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)》
@@ -87,3 +87,5 @@ Microservices（微服务） 依赖于“基础设施自动化”，而 Docker �
 ## 参考
 
 * <http://www.docker.com/what-docker>
+* <http://waylau.com/ahout-microservices>
+* [给程序员的开源、免费图书集合](https://github.com/waylau/books-collection)
