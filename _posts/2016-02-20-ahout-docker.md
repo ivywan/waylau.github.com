@@ -44,7 +44,7 @@ Docker 是一种“容器即服务”（Docker Containers as a Service ，简称
 
 ![](http://www.docker.com/sites/default/files/what-is-docker-diagram.png)
 
-每个虚拟机都包括应用程序、必要的二进制文件和库以及一个完整的客户操作系统，而所有的这些，将近需要十几个 GB 的大小。
+每个虚拟机都包括应用程序、必要的二进制文件和库以及一个完整的客户操作系统(Guest OS)，尽管它们被分离，它们共享并利用主机的硬件资源，将近需要十几个 GB 的大小。
 
 ### 容器的架构
 
@@ -53,6 +53,15 @@ Docker 是一种“容器即服务”（Docker Containers as a Service ，简称
 容器包括应用程序及其所有的依赖，但与其他容器共享内核。它们以独立的用户空间进程形式运行在主机操作系统上。他们也不依赖于任何特定的基础设施，Docker 容器可以运行在任何计算机上，任何基础设施和任何云上。
 
 Docker 的容器利用了 [LXC](https://linuxcontainers.org/)，管理利用了  namespaces 来做权限的控制和隔离，cgroups 来进行资源的配置，并且还通过  aufs 来进一步提高文件系统的资源利用率，而这些技术都不是 Docker 独创。
+
+### LXC
+
+LXC 与虚拟机的不同之处在于，它是一个操作系统级别的虚拟化环境，而不是硬件虚拟化环境。他们都做同样的事情，但 LXC 是操作系统级别的虚拟化环境，虚拟环境有它自己的进程和网络空间，而不是创建一个完整成熟的虚拟机。因此，一个 LXC 虚拟操作系统具有最小的资源需求，并启动只需几秒钟。
+
+正如你可以在下图中看到的，左侧是 LXC 虚拟的 Ubuntu ，默认安装使用 11 MB 大小。
+
+![](https://www.howtoforge.com/images/how-to-use-docker-introduction/big/pic_4.png)
+
 
 ## Docker 与 Microservices 的关系
 
@@ -87,5 +96,6 @@ Microservices（微服务） 依赖于“基础设施自动化”，而 Docker �
 ## 参考
 
 * <http://www.docker.com/what-docker>
+* <https://www.howtoforge.com/tutorial/how-to-use-docker-introduction/>
 * <http://waylau.com/ahout-microservices>
 * [给程序员的开源、免费图书集合](https://github.com/waylau/books-collection)
