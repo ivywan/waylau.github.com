@@ -73,4 +73,27 @@ VirtualBox 号称是最强的免费虚拟机软件，它不仅具有丰富的特
 
 ## CentOS 配置
 
-参考 <http://www.waylau.com/centos-7-installation-and-configuration/>
+有关 CentOS 的配置可以参考 <http://www.waylau.com/centos-7-installation-and-configuration/>
+
+## 相关错误解决
+
+### Unable to load R3 module
+
+错误提示：
+
+    Unable to load R3 module C:\Program Files\Oracle\VirtualBox/
+    
+    VBoxDD.DLL (VBoxDD): GetLastError=1790 (VERR_UNRESOLVED_ERROR).
+    返回 代码:  E_FAIL   (0x80004005)
+    组件:  Console
+    界面:  IConsole   {8ab7c520-2442-4b66-8d74-4ff1e195d2b6}
+    
+解决方法：
+
+1. 其它的电脑上面将上面的`C:\Windows\system32\uxtheme.dll` 文件拷贝过来 覆盖本机的 `uxtheme.dll`
+2. 使用 UniversalThemePatcher 还原破解的主题，全部恢复为“未破解”状态即可。
+
+![](http://i12.tietuku.com/888c0ca2c12436db.png)
+
+
+上述两个资源都 可以在 <http://pan.baidu.com/s/1hra3PjQ> 进行下载。
