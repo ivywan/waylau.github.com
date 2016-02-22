@@ -79,14 +79,14 @@ Microservices（微服务） 依赖于“基础设施自动化”，而 Docker �
 
 ## 如何使用 Docker
 
-真是一个大话题，本文不会详细涉及。如果对 Docker 抱有兴趣，可以参阅市面上的书籍：
+真是一个大话题，本文暂时不会详细涉及，会另外撰文介绍。如果对 Docker 抱有兴趣，可以参阅市面上的书籍：
 
 * 《[The Docker Book](http://book.douban.com/subject/25931006/)》（James Turnbull）
 * 《[Docker : Up and Running](http://book.douban.com/subject/26413766/) 》(Karl Matthias、Sean P. Kane)
 * 《[Docker in Action](http://book.douban.com/subject/26409789/)》（Jeff Nickoloff）
 * 《[Using docker](http://book.douban.com/subject/26423831/)》（Adrian Mouat ）
 
-《[给程序员的开源、免费图书集合](https://github.com/waylau/books-collection)》收录了几本免费的书籍有：
+《[给程序员的开源、免费图书集合](https://github.com/waylau/books-collection)》收录了几本 Docker 免费的书籍有：
 
 * 《[Docker —— 从入门到实践](https://github.com/yeasy/docker_practice)》
 * 《[Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)》
