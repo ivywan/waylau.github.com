@@ -138,6 +138,14 @@ Docker 容器将软件以及它运行安装所需的一切文件（代码、运�
 3. Docker 守护程序从该 image 中创建新的容器，该容器执行输出动作，输出的内容就是上面所看到的；
 4. Docker 守护程序将输出流到 Docker 客户端并发送你的终端显示。
 
+## 查看 docker image
+
+可以看到 pull 回来的这个 image 的一个情况，大小不到 1k。
+
+    [waylau@waylau ~]$ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    hello-world         latest              690ed74de00f        4 months ago        960 B
+
 ## 参考
 
 * <https://docs.docker.com/engine/installation/linux/centos/>
