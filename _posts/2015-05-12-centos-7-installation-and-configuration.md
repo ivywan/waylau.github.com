@@ -57,6 +57,24 @@ CentOS 与 RHEL 是同源，所以，在 CentOS 文档不足时，可以参考 R
 
 ## 配置静态IP
 
+### 查看当前网络情况
+
+执行 `ip addr` 
+    
+    [root@localhost ~]#  ip addr
+    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+        inet 127.0.0.1/8 scope host lo
+           valid_lft forever preferred_lft forever
+        inet6 ::1/128 scope host
+           valid_lft forever preferred_lft forever
+    2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+        link/ether 08:00:27:78:33:ff brd ff:ff:ff:ff:ff:ff
+        inet 192.168.0.106/24 brd 192.168.0.255 scope global dynamic enp0s3
+           valid_lft 82545sec preferred_lft 82545sec
+        inet6 fe80::a00:27ff:fe78:33ff/64 scope link
+           valid_lft forever preferred_lft forever
+    
 ### 查看以太网设备名称
 
     [root@localhost ~]# nmcli d
@@ -158,3 +176,26 @@ CentOS 与 RHEL 是同源，所以，在 CentOS 文档不足时，可以参考 R
 
     [root@bogon ~]# date
     2015年 05月 14日 星期四 11:15:54 CST
+
+##  添加用户、授权
+
+添加用户
+
+    useradd dev #创建用户  
+    passwd dev #修改密码 
+    
+   
+新建用户添加 sudo 权限
+
+    chmod -v u+w /etc/sudoers  
+    
+`/etc/sudoers` 的权限模式保留为0640 (rw-r-----)  
+
+在 sudoers 文件添加新用户信息到 ## Allow root to run any commands anywher 下，
+ 
+    root    ALL=(ALL)       ALL  
+    dev     ALL=(ALL)       ALL #新增用户信息  
+    
+取消 sudoers 文件可写权限
+
+    chmod -v u-w /etc/sudoers  
