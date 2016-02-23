@@ -13,13 +13,9 @@ tags: [Docker,CentOS,安装,容器,VirtualBox]
 
 ## 什么是 Docker
 
-[Docker](http://www.docker.com/) 是[开源](https://github.com/docker/docker)的应用容器引擎。
-
-Docker 可以让你将所有应用软件以及它的以来打包成软件开发的标准化单元。
-
-Docker 容器将软件以及它运行安装所需的一切文件（代码、运行时、系统工具、系统库）打包到一起，这就保证了不管是在什么样的运行环境，总是能以相同的方式运行。
-
 ![](https://docs.docker.com/dist/assets/images/logo.png)
+
+Docker 是为开发人员和系统管理员用于构建、发布、并运行分布式应用程序的开放式平台。该平台由 Docker 引擎（一个便携、轻巧的运行时和打包工具） 和 Docker Hub （一个共享应用程序和自动化工作流的云服务）等组成。Docker 可以使应用程序从组件迅速组装并消除了开发、质量保证和生产环境之间的摩擦问题。这样一来，IT部门可以更快地发布，而这些应用程序不管是运行在笔记本电脑、数据中心的虚拟机，还是任何的云，其运行过程和结果都是一致的。
 
 更多有关 Docker 的介绍，可以参阅《[简述 Docker](http://waylau.com/ahout-docker/)》 一文。
 
