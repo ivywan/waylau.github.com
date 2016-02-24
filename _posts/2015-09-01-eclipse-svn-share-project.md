@@ -4,8 +4,8 @@ title: 用 eclipse SVN 插件共享项目
 date: 2015-09-01 01:08
 author: admin
 comments: true
-categories: [eclipse,SVN]
-tags: [eclipse,SVN]
+categories: [Eclipse,SVN]
+tags: [Eclipse,SVN]
 ---
 
 本文介绍了如何使用 eclipse SVN 插件来共享项目。

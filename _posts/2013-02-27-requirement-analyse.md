@@ -4,8 +4,8 @@ title:  可行性分析与需求分析
 date:  2013-02-27 00:43
 author: admin
 comments: true
-categories: [management]
-tags: [management]
+categories: [Management,Design]
+tags: [Management,Design]
 ---
 
 一、概念

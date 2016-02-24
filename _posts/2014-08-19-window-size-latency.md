@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  $(window).resize() 执行延迟
-date: 2014-08-18 01:40
+date: 2014-08-19 01:40
 author: admin
 comments: true
-categories: [html]
-tags: [html,css]
+categories: [HTML]
+tags: [HTML,window,resize,延迟]
 ---
 #问题
 ` $(window).resize()`  是监听窗口大小缩放，而后执行动作。最近在用`echarts`报表时，发现表报的缩放跟不上窗口的缩放节奏，比窗口的缩放总是慢一步。代码

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: golang实现的一个小游戏--猜数字
+title: Golang 实现的一个小游戏--猜数字
 date: 2013-04-06 01:17
 author: admin
 comments: true
-categories: [Golang,game]
-tags: [Golang,game]
+categories: [Golang,Game]
+tags: [Golang,Game]
 ---
 随机生成一个数字，输入一个数字看是否匹对，匹配则结速，反之提示是大了还是小了，
 

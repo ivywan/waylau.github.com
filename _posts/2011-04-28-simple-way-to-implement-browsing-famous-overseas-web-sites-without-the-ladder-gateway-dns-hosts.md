@@ -4,8 +4,8 @@ title: 简单实现浏览国外著名网站的方法，不用梯子，修改本�
 date: 2011-04-28 00:26
 author: admin
 comments: true
-categories: [web]
-tags:  hosts
+categories: [Web]
+tags:  [Web,hosts]
 ---
 修改本机的 hosts 文件
 

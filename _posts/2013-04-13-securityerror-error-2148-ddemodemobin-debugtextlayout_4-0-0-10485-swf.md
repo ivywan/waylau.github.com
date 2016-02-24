@@ -4,8 +4,8 @@ title:   SecurityError Error 2148 SWF 不能访问本地资源
 date:   2013-04-13 01:29
 author: admin
 comments: true
-categories: [flash]
-tags: [flash]
+categories: [Flash]
+tags: [Flash]
 ---
 ##错误提示：
 

@@ -4,8 +4,8 @@ title:   Flex的一些总结
 date:   2013-03-26 00:52
 author: admin
 comments: true
-categories: [flash]
-tags: [flash]
+categories: [Flex]
+tags: [Flex,总结]
 ---
 
 ##Loader与URLLoader,SWFLoader

@@ -4,8 +4,8 @@ title: 约定大于配置--实战
 date: 2014-08-22 01:40
 author: admin
 comments: true
-categories: [architecture]
-tags: [architecture]
+categories: [Architecture]
+tags: [Architecture]
 ---
  
 约定优于配置是一个简单的概念。 系统，类库，框架应该假定合理的默认值，而非要求提供不必要的配置。 在大部分情况下，你会发现使用框架提供的默认值会让你的项目运行的更快。

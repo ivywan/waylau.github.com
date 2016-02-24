@@ -1,11 +1,11 @@
 ---
 layout: post
-title: html颜色块图标
+title: HTML 颜色块图标
 date: 2014-08-18 01:40
 author: admin
 comments: true
-categories: [html]
-tags: [html,css]
+categories: [HTML]
+tags: [HTML,CSS]
 ---
 
 html颜色块图标醒目大方。

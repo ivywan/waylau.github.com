@@ -4,8 +4,8 @@ title:  在flex中监听鼠标右键事件,提示 TypeError Error 2007 参数typ
 date:   2013-03-11 00:50
 author: admin
 comments: true
-categories: [flash]
-tags: [flash]
+categories: [Flash]
+tags: [Flash]
 ---
 
 在flex中监听鼠标右键事件 ，报错，提示 缺少参数、

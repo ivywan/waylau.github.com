@@ -4,8 +4,8 @@ title: eclipse 中文、英文语言互换方法
 date: 2011-03-28 00:22
 author: admin
 comments: true
-categories: [eclipse]
-tags: [eclipse]
+categories: [Eclipse]
+tags: [Eclipse]
 ---
 配置文件中修改
 

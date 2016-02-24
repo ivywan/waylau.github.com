@@ -1,10 +1,11 @@
 ---
 layout: post
-title: AsWing应用之JTable的例子
+title: AsWing 应用之JTable的例子
 date: 2013-07-26 02:12
 author: admin
 comments: true
-categories: [ActionScript3,aswing]
+categories: [ActionScript3,AsWing]
+tags: [ActionScript3,AsWing,JTable]
 ---
 	package
 	{

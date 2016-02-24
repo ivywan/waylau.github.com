@@ -4,8 +4,8 @@ title:  在 Eclipse 中 Debug Maven 项目“source not found”问题解决
 date: 2015-01-15 01:21
 author: admin
 comments: true
-categories: [eclipse,Maven]
-tags: [eclipse,Maven]
+categories: [Eclipse,Maven]
+tags: [Eclipse,Maven]
 ---
 
 ##问题

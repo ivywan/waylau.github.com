@@ -4,8 +4,8 @@ title: 用Heroku、snova-c4搭梯子上墙
 date: 2014-04-03 17:32
 author: admin
 comments: true
-categories: [heroku, Web]
-tags: [heroku, snova-c4, Web]
+categories: [Heroku,Web]
+tags: [Heroku, snova-c4, Web]
 ---
 1.snova-c4（翻墙软件）下载
 

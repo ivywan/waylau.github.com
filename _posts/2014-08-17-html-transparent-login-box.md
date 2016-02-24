@@ -1,11 +1,11 @@
 ---
 layout: post
-title: html透明登录框的实现
+title: HTML 透明登录框的实现
 date: 2014-08-17 01:40
 author: admin
 comments: true
-categories: [html]
-tags: [html,css]
+categories: [HTML]
+tags: [HTML,CSS]
 ---
 
 html登录界面，看似简单，无非就是一个底图，一个名称，一个登录，一些底部信息，在没有美工的情况下，纯代码实现还是有些坑。

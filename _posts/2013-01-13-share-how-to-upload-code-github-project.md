@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  如何在github上传代码、分享项目
+title:  如何在 Github 上传代码、分享项目
 date: 2013-01-13 00:31
 author: admin
 comments: true
-categories: [git]
-tags: [git,github]
+categories: [Github]
+tags: [Git,Github]
 ---
 
 ####首先当然是要创建github账户，登录<https://github.com>有邮箱即可，略
