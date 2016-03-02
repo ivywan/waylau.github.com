@@ -5,7 +5,7 @@ date: 2016-03-01 02:41
 author: admin
 comments: true
 categories: [Java,IO]
-tags: [Java,IO,模型,演进]
+tags: [Java,IO,模型,演进,同步,异步,阻塞,非阻塞]
 ---
 
 什么是同步？什么是异步？阻塞和非阻塞又有什么区别？本文先从 Unix 的 I/O 模型讲起，介绍了5种常见的 I/O 模型。而后再引出 Java 的 I/O 模型的演进过程，并用实例说明如何选择合适的 Java I/O 模型来提高系统的并发量和可用性。
@@ -116,18 +116,21 @@ EchoServer 代码：
 
 ```java
 public class EchoServer {
-    public static void main(String[] args) throws IOException {
-        
-        if (args.length != 1) {
-            System.err.println("Usage: java EchoServer <port number>");
-            System.exit(1);
-        }
-        
-        int portNumber = Integer.parseInt(args[0]);
+	public static int DEFAULT_PORT = 7;
+
+	public static void main(String[] args) throws IOException {
+
+		int port;
+
+		try {
+			port = Integer.parseInt(args[0]);
+		} catch (RuntimeException ex) {
+			port = DEFAULT_PORT;
+		}
         
         try (
             ServerSocket serverSocket =
-                new ServerSocket(Integer.parseInt(args[0]));
+                new ServerSocket(port);
             Socket clientSocket = serverSocket.accept();     
             PrintWriter out =
                 new PrintWriter(clientSocket.getOutputStream(), true);                   
@@ -140,7 +143,7 @@ public class EchoServer {
             }
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "
-                + portNumber + " or listening for a connection");
+                + port + " or listening for a connection");
             System.out.println(e.getMessage());
         }
     }
@@ -155,16 +158,19 @@ public class EchoServer {
 
 ```java
 public class MultiThreadEchoServer {
+	public static int DEFAULT_PORT = 7;
+
 	public static void main(String[] args) throws IOException {
 
-		if (args.length != 1) {
-			System.err.println("Usage: java EchoServer <port number>");
-			System.exit(1);
-		}
+		int port;
 
-		int portNumber = Integer.parseInt(args[0]);
+		try {
+			port = Integer.parseInt(args[0]);
+		} catch (RuntimeException ex) {
+			port = DEFAULT_PORT;
+		}
 		Socket clientSocket = null;
-		try (ServerSocket serverSocket = new ServerSocket(portNumber);) {
+		try (ServerSocket serverSocket = new ServerSocket(port);) {
 			while (true) {
 				clientSocket = serverSocket.accept();
 				
@@ -173,7 +179,7 @@ public class MultiThreadEchoServer {
 			}
 		} catch (IOException e) {
 			System.out.println(
-					"Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
+					"Exception caught when trying to listen on port " + port + " or listening for a connection");
 			System.out.println(e.getMessage());
 		}
 	}
@@ -217,17 +223,20 @@ public class EchoServerHandler implements Runnable {
 
 ```java
 public class ThreadPoolEchoServer {
+	public static int DEFAULT_PORT = 7;
+
 	public static void main(String[] args) throws IOException {
 
-		if (args.length != 1) {
-			System.err.println("Usage: java EchoServer <port number>");
-			System.exit(1);
-		}
+		int port;
 
-		int portNumber = Integer.parseInt(args[0]);
+		try {
+			port = Integer.parseInt(args[0]);
+		} catch (RuntimeException ex) {
+			port = DEFAULT_PORT;
+		}
 		ExecutorService threadPool = Executors.newFixedThreadPool(5);
 		Socket clientSocket = null;
-		try (ServerSocket serverSocket = new ServerSocket(portNumber);) {
+		try (ServerSocket serverSocket = new ServerSocket(port);) {
 			while (true) {
 				clientSocket = serverSocket.accept();
 				
@@ -236,7 +245,7 @@ public class ThreadPoolEchoServer {
 			}
 		} catch (IOException e) {
 			System.out.println(
-					"Exception caught when trying to listen on port " + portNumber + " or listening for a connection");
+					"Exception caught when trying to listen on port " + port + " or listening for a connection");
 			System.out.println(e.getMessage());
 		}
 	}
@@ -244,6 +253,8 @@ public class ThreadPoolEchoServer {
 ```
 
 **存在问题**：在大量短连接的场景中性能会有提升，因为不用每次都创建和销毁线程，而是重用连接池中的线程。但在大量长连接的场景中，因为线程被连接长期占用，不需要频繁地创建和销毁线程，因而没有什么优势。
+
+虽然这种方法可以适用于小到中度规模的客户端的并发数，如果连接数超过 100,000或更多，那么性能将很不理想。
 
 ## 改进为“非阻塞I/O”模式  
 
@@ -344,7 +355,7 @@ public class NonBlokingEchoServer {
 
 Java SE 7 版本之后，引入了异步 I/O （NIO.2） 的支持，为构建高性能的网络应用提供了一个利器。
 
- 主线程 AsyncEchoServer.java
+主线程 AsyncEchoServer.java
 
 ```java
 public class AsyncEchoServer {
