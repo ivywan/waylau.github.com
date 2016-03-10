@@ -13,7 +13,8 @@ tags: [CAP,Distributed,分布式,架构]
 
 ## 什么是 CAP 理论
 
-![](http://i12.tietuku.com/e76dec3cf78f27a5.jpg)
+![](http://99btgc01.info/uploads/2016/03/001.jpg)
+
 
 
 在计算机科学理论，CAP 定理（也称为 Brewer 定理），是由计算机科学家 Eric Brewer 提出的，即在分布式计算机系统不可能同时提供以下全部三个保证：
@@ -26,11 +27,13 @@ tags: [CAP,Distributed,分布式,架构]
 
 下面分别举例说明了为什么说  CAP 只能三选二。
 
-![](http://i12.tietuku.com/ba750cd72b491979.png)
+![](http://www.julianbrowne.com/assets/attachments/brewers-cap-theorem/images/intro.png)
+
 
 上面的图显示了在一个网络中，N1 和 N2 两个节点。他们都共享数据块 V，其中有一个值 V0 。运行在 N1 的 A 程序可以认为是安全的、无 bug、可预测的和可靠的。运行在 N2 是 B 程序。这个例子中，A 将写入 V 新​值，而 B 从 V 读取值
 
-![](http://i12.tietuku.com/21b0286b8360d1a6.png)
+![](http://www.julianbrowne.com/assets/attachments/brewers-cap-theorem/images/scenario-1.png)
+
 
 系统预期执行下面的操作
 
@@ -38,7 +41,7 @@ tags: [CAP,Distributed,分布式,架构]
 2. 然后消息（M）从 N1 更新 V 的拷贝到 N2
 3. 现在，从 B 读取将返回 V1
 
-![](http://i12.tietuku.com/c5aa0d93a35255b0.png)
+![](http://www.julianbrowne.com/assets/attachments/brewers-cap-theorem/images/scenario-2.png)
 
 
 如果网络是分区的，当 N1 到 N2 的消息不能传递时，执行上面的第三步，会出现虽然 N2 能访问到 V 的值（可用性），但其实与 N1 的 V 的值已经不一致了（一致性）。
@@ -47,7 +50,8 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲分区（CA 模型）
 
-![](http://i12.tietuku.com/d7947c0125ff3330.jpg)
+![](http://99btgc01.info/uploads/2016/03/002.jpg)
+
 
 举例：
 
@@ -63,7 +67,8 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲可用性（CP 模型）
 
-![](http://i12.tietuku.com/4b54475279807313.jpg)
+![](http://99btgc01.info/uploads/2016/03/003.jpg)
+
 
 举例：
 
@@ -78,7 +83,8 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲一致性（AP 模型）
 
-![](http://i12.tietuku.com/598887db6c4066c0.jpg)
+![](http://99btgc01.info/uploads/2016/03/004.jpg)
+
 
 举例：
 
