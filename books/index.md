@@ -24,3 +24,4 @@ permalink: /books/
 * [Apache Cordova 开发指南](https://github.com/waylau/cordova-dev-guide) 
 * [Java 编程要点](https://github.com/waylau/essential-java) 
 * [Java 虚拟机规范](https://github.com/waylau/java-virtual-machine-specification) 
+* [DB2 教程](https://github.com/waylau/db2-tutorial)
