@@ -93,7 +93,7 @@ Tomcat 指定了 8443 端口为 HTTPS 访问端口。
 
 ## 效果
 
-首先，浏览器访问没有 HTTPS 支持的页面，<https://localhost:8080>
+首先，浏览器访问没有 HTTPS 支持的页面，<http://localhost:8080>
 
 ![](http://99btgc01.info/uploads/2016/03/keystore5.jpg)
 
