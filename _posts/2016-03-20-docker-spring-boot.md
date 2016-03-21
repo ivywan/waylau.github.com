@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用 Docker 构建、运行、发布来一个 Spring Boot 应用
+title: 用 Docker 构建、运行、发布一个 Spring Boot 应用
 date: 2016-03-20 01:41
 author: admin
 comments: true
