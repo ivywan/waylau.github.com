@@ -279,12 +279,12 @@ Login Succeeded
 ```
 [root@waylau spring-boot]# docker push waylau/docker-spring-boot
 The push refers to a repository [docker.io/waylau/docker-spring-boot]
-751d29eef02e: Pushed 
-4da3741f39c7: Pushing 11.39 MB/155.6 MB
-5f70bf18a086: Pushed 
-7e4d0cb13643: Pushed 
-8f045733649f: Pushed 
-8f045733649f: Preparing 
+751d29eef02e: Layer already exists 
+4da3741f39c7: Pushed 
+5f70bf18a086: Layer already exists 
+7e4d0cb13643: Layer already exists 
+8f045733649f: Layer already exists 
+latest: digest: sha256:eb4d5308ba1bb27489d808279e74784bda6761b3574f4298d746abba59b35164 size: 9415
 ```
 
 
