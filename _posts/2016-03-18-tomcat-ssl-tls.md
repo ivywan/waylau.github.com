@@ -136,6 +136,7 @@ localhost:8443 使用了无效的安全证书。
 
 ![](http://99btgc01.info/uploads/2016/03/keystore4.jpg)
 
+*如果要隐藏端口号，就要把 Tomcat 的 HTTPS 端口设为 443*
 
 ## 总结
 
