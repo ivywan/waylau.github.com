@@ -313,10 +313,7 @@ sudo service docker restart
 ## 源码
 
 获取项目源码，
-执行
-
->git clone https://github.com/waylau/docker-demos.git
->cd docker-demos/samples/spring-boot
+<https://github.com/waylau/docker-demos> 中的 `samples/spring-boot`
 
 获取项目镜像，
 执行
