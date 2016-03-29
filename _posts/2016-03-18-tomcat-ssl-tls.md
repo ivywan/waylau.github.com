@@ -91,6 +91,40 @@ Unix：
 
 Tomcat 指定了 8443 端口为 HTTPS 访问端口。
 
+*如果要隐藏端口号，就要把 Tomcat 的 HTTPS 端口设为 443*
+
+若想把所有 HTTP 请求都转到 HTTPS 协议上，可以修改tomcat的conf下的web.xml，在
+   <welcome-file-list> </welcome-file-list> 节点下方 添加如下：
+
+```xml
+<security-constraint>  
+	<!-- Authorization setting for SSL --> 
+	<web-resource-collection >  
+		<web-resource-name >SSL</web-resource-name>  
+		<url-pattern>/*</url-pattern>  
+	</web-resource-collection>  
+	<user-data-constraint>  
+		<transport-guarantee>CONFIDENTIAL</transport-guarantee>  
+	</user-data-constraint>  
+</security-constraint>
+```xml
+
+其中，<url-pattern> 是配置文件过滤策略，比如，只对 .jsp 的请求自动转化为HTTPS ,配置如下：
+
+```xml
+<security-constraint>  
+	<web-resource-collection >  
+		<web-resource-name >SSL</web-resource-name>  
+		<url-pattern>*.jsp</url-pattern>  
+	</web-resource-collection>  
+	<user-data-constraint>  
+		<transport-guarantee>CONFIDENTIAL</transport-guarantee>  
+	</user-data-constraint>  
+</security-constraint>
+ ```xml
+ 
+在 <url-pattern> 中可以配置你希望自动转化的请求路径 /* 、  login.html 、 login.jsp 等等。
+
 ## 效果
 
 首先，浏览器访问没有 HTTPS 支持的页面，<http://localhost:8080>
@@ -136,7 +170,7 @@ localhost:8443 使用了无效的安全证书。
 
 ![](http://99btgc01.info/uploads/2016/03/keystore4.jpg)
 
-*如果要隐藏端口号，就要把 Tomcat 的 HTTPS 端口设为 443*
+
 
 ## 总结
 
