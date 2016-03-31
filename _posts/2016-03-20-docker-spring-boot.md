@@ -265,7 +265,9 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 执行：
 
->docker login
+    docker login
+
+输出为：
 
 ```
 [root@waylau spring-boot]# docker login

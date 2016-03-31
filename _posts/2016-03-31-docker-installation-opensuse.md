@@ -210,7 +210,9 @@ linux-aihn:~ # docker run -p 8080:8080 -t waylau/docker-spring-boot
 2016-03-31 02:34:24.497  INFO 1 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 2016-03-31 02:34:24.567  INFO 1 --- [           main] c.waylau.docker_spring_boot.Application  : Started Application in 39.766 seconds (JVM running for 46.766)
 ```
+### 访问项目
 
+如果程序正确运行，浏览器访问 <http://localhost:8080/>，可以看到页面 “Hello Docker World.” 字样。
 
 ## 查看 docker image
 
@@ -221,8 +223,6 @@ linux-aihn:~ # docker images
 REPOSITORY                  TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 waylau/docker-spring-boot   latest              3694bcee2712        10 days ago         180.8 MB
 ```
-
-## 源码
 
 ## 源码
 
