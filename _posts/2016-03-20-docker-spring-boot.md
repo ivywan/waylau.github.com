@@ -174,11 +174,11 @@ public class Application {
 
 编译：
 
->mvn package
+    mvn package
 
 运行：
 
->java -jar target/docker-spring-boot-1.0.0.jar
+    java -jar target/docker-spring-boot-1.0.0.jar
 
 ### 访问项目
 
@@ -207,13 +207,13 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 执行构建成为 docker image:
 
->mvn package docker:build
+    mvn package docker:build
 
 ## 运行 
 
 运行 Docker Image
 
->docker run -p 8080:8080 -t waylau/docker-spring-boot
+    docker run -p 8080:8080 -t waylau/docker-spring-boot
 
 ```
 [root@waylau spring-boot]# docker run -p 8080:8080 -t waylau/docker-spring-boot
@@ -252,6 +252,10 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 2016-03-20 08:46:02.343  INFO 1 --- [           main] c.waylau.docker_spring_boot.Application  : Started Application in 13.194 seconds (JVM running for 15.828)
 ```
 
+### 访问项目
+
+如果程序正确运行，浏览器访问 <http://localhost:8080/>，可以看到页面 “Hello Docker World.” 字样。
+
 ## 推送 image 到 Docker Hub
 
 
@@ -274,7 +278,7 @@ Login Succeeded
 
 执行推送
 
->docker push waylau/docker-spring-boot
+    docker push waylau/docker-spring-boot
 
 ```
 [root@waylau spring-boot]# docker push waylau/docker-spring-boot
@@ -318,9 +322,10 @@ sudo service docker restart
 获取项目镜像，
 执行
 
->docker pull waylau/docker-spring-boot
+    docker pull waylau/docker-spring-boot
 
 ## 参考引用
 
 * <http://spring.io/guides/gs/spring-boot-docker/>
 * <https://yq.aliyun.com/articles/2930?utm_source=tuicool&utm_medium=referral>
+* <https://hub.docker.com/r/waylau/docker-spring-boot/>
