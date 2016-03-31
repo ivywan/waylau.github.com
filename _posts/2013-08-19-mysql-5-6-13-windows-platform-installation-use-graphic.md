@@ -1,11 +1,11 @@
 ---
 layout: post
-title: mysql-5.6.13在windows平台下的安装、使用（图解）
+title: MySQL 在 Windows 平台下的安装、使用（图解）
 date: 2013-08-19 02:33
 author: admin
 comments: true
-categories: [Mysql]
-tags: [Mysql,安装]
+categories: [MySQL,Windows]
+tags: [MySQL,Windows,安装]
 ---
 一、 首先电脑要具备.Net Framework 4 以上环境
 二、 MySQL下载、安装、执行
