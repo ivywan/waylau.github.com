@@ -108,7 +108,7 @@ Spring会自动搜索某些路径下的Java类，并将这些java类注册为Bea
 
 	</beans>
 
-注意：如果配置了<context:component-scan>那么<context:annotation-config/>标签就可以不用再xml中配置了，因为前者包含了后者。另外<context:annotation-config/>还提供了两个子标签`<context:include-filter>` `<context:exclude-filter>`用来控制扫描文件的颗粒度,例如
+注意：如果配置了`<context:component-scan/>`那么`<context:annotation-config/>`标签就可以不用在 xml 中配置了，因为前者包含了后者。另外`<context:component-scan/>`还提供了两个子标签`<context:include-filter>` `<context:exclude-filter>`用来控制扫描文件的颗粒度,例如
 
 	<beans>
 		<context:component-scan base-package="com.waylau.rest">
