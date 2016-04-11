@@ -19,11 +19,12 @@ Tomcat 目前只能操作 JKS、PKCS11、PKCS12 格式的密钥存储库。JKS �
 创建一个 keystore 文件保存服务器的私有密钥和自签名证书：
 
 Windows：
->"%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA
+
+	"%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA
 
 UNIX：
 
->$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA
+	$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA
 
 执行该命令后，首先会提示你提供 keystore 的密码。Tomcat 默认使用的密码是 `changeit`（全部字母都小写），当然你可以指定一个自定义密码（如果你愿意）。同样，你也需要将这个自定义密码在 `server.xml` 配置文件内进行指定，稍后再予以详述。
 
@@ -68,13 +69,11 @@ CN=waylau, OU=waylau.com, O=waylau.com, L=hangzhou, ST=zhejiang, C=china是否�
 
 Windows：
 
->"%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA
-  -keystore \path\to\my\keystore
+	"%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA -keystore \path\to\my\keystore
   
 Unix：
 
->$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA  
-  -keystore /path/to/my/keystore    
+	$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore /path/to/my/keystore    
   
   
 ## 修改配置
