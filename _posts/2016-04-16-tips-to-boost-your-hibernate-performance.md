@@ -68,3 +68,4 @@ JPA 2.1 新增了 [CriteriaUpdate](http://docs.oracle.com/javaee/7/api/javax/per
 
 * <http://docs.jboss.org/hibernate/orm/5.1/userguide/html_single/Hibernate_User_Guide.html>
 * <http://docs.oracle.com/javaee/7/>
+* <http://www.thoughts-on-java.org/tips-to-boost-your-hibernate-performance/>
