@@ -10,6 +10,8 @@ tags: [Hibernate,Performance,Optimization,性能,优化]
 
 Hibernate 是 Java EE 应用中流行的 JPA 框架，简单易用，但很多使用过 Hibernate 的开发者都普遍反映 Hibernate 性能低下。究其原因，还是使用者没有对 Hibernate 进行过深入理解，对 Hibernate 的应用也只是浮于表面。本文介绍了几种简单实现 Hibernate 性能优化的方法。
 
+<!-- more -->
+
 ## 启用 Hibernate 数据统计策略
 
 没有测量就没有优化。启用 Hibernate 数据统计策略，用来做优化前后的数据对比。
