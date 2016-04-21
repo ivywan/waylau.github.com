@@ -10,6 +10,8 @@ tags: [REST,API]
 
 Web API 近几年变得越来越火，而简洁的 API 设计在多后端系统交互应用中也变得尤为重要。通常，会使用 RESTful API 来作为我们的 Web API 。本文介绍了几种简洁 RESTful API 设计的最佳实践。
 
+<!-- more -->
+
 ## 使用的名词而不是动词
 
 使用名词来定义接口
