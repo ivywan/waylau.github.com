@@ -525,3 +525,4 @@ COMMIT;app@GJJN-QZ-02:~>
 ## 参考引用
 
 * <http://www.ibm.com/support/knowledgecenter/SSEPGG_9.5.0/com.ibm.db2.luw.messages.sql.doc/doc/msql02547n.html>
+* [《DB2 教程》](https://github.com/waylau/db2-tutorial)
