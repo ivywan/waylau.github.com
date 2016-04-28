@@ -391,6 +391,136 @@ db2inst@waylau:~>
 3. 解决方案：尝试使用多种还原方式，将线上数据库在测试服务器上重新还原一个新的数据库，再查看是否有类似问题的产生。
 
 
+## 后记
+
+后期我在对线上数据库进行更新时，重现了该问题，在通过执行脚本文件形式来对数据库进行更新操作。当我的脚本文件编码格式对中文不友好时，执行后的数据就乱码了：
+
+```
+db2inst@db1:~> cat necc_sql_update_20160406.sql
+/*
+ط֟£º¸ΰπ
+ʱ¼䣺2016-4-6
+
+ў¸ŁɠWHITE_PAPER £º½«̹ԐµŖюŗ¢ˍ²¹ȫ£¬²¢½«̹ԐԐĬɏֵµŏΪ²»ԃĬɏֵ¡£
+
+*/
+---------ӔЂΪ SQL ½ű¾------------
+
+
+COMMENT ON DB2INST.WHITE_PAPER ( 
+    DHTB IS 'µ组ͬ±Ƨ,
+    DLZLMB IS 'µ聦؜Ŀ±襬
+    DWDHTB IS 'µ¥λµ组ͬ±Ƨ,
+    ENERGY_HD IS 'º˵奬
+    ENERGY_KZS IS '¿ʔډ
+    ENERGY_MT IS 'ú̿',
+    ENERGY_OTHER IS 'Ǥ̻',
+    ENERGY_RQ IS 'ȼǸ',
+    ENERGY_SD IS 'ˮµ奬
+    ENERGY_SW_HD IS 'º˵芵ϯ',
+    ENERGY_SW_KZS IS '¿ʔډ򶏯',
+    ENERGY_SW_MT IS 'ú̿ʵϯ',
+    ENERGY_SW_RQ IS 'ȼǸʵϯ',
+    ENERGY_SW_SD IS 'ˮµ芵ϯ',
+    ENERGY_SW_SY IS 'ʯԍʵϯ',
+    ENERGY_SY IS 'ʯԍ',
+    FIELD_GY IS '¹¤ҵ',
+    FIELD_JT IS '½»ͨ',
+    FIELD_JZ IS '½¨׾ҵ',
+    FIELD_NY IS 'ũҵ',
+    FIELD_OTHER IS 'Ǥ̻¬Բ',
+    FIELD_SH IS 'ʺ»쥬
+    FIELD_SY IS 'ʌҵ',
+    GDPDH IS 'µ¥λ GDP µ组',
+    GDPNH IS 'µ¥λ GDP Ŝº§,
+    INDUSTRY_DL IS 'µ聦',
+    INDUSTRY_GT IS '¸׌
+    INDUSTRY_HG IS '»¯¹¤',
+    INDUSTRY_JC IS '½¨²§,
+    INDUSTRY_OTHER IS 'Ǥ̻¹¤ҵѐҵ',
+    INDUSTRY_SH IS 'ʯ»¯',
+    INDUSTRY_YS IS 'Ԑɫ',
+    LJJD IS '[¼ƽ󆥬
+    NHZLMB IS 'Ŝºŗ݁¿Ŀ±襬
+    NXTB IS 'ŜЧͬ±ȣ¨µ¥λ GDP Ŝºō¬±ȣ©',
+    REGION_CODE IS 'ȸԲ±ძ',
+    REGION_NAME IS 'ȸԲĻ³ħ,
+    REGION_TYPE IS 'ȸԲ`э',
+    SEASON IS '¼¾¶Ʊ£¬2£¬3£¬4',
+    WNMB IS 'ϥŪĿ±襬
+    WQJD IS 'βǳ½󆥬
+    YEAR IS 'Ū·ۧ,
+    ZDH IS '؜µ组',
+    ZHNH IS '؛ºЄܺ§,
+    ZLTB IS '؜ͬ±ƿ(%)' );
+
+```
+
+而把文档格式保存为“UTF-8 无 BOM”的格式编码，显示正常：
+
+```
+
+app@GJJN-QZ-02:~> cat /home/app/patch/necc_sql_update_20160406.sql
+/*
+作者：柳伟卫
+时间：2016-4-6
+
+修改了 WHITE_PAPER ：将所有的中文注释补全，并将所有有默认值的项改为不用默认值。
+
+*/
+---------以下为 SQL 脚本------------
+
+COMMENT ON DB2INST.WHITE_PAPER ( 
+    DHTB IS '电耗同比',
+    DLZLMB IS '电力总量目标',
+    DWDHTB IS '单位电耗同比',
+    ENERGY_HD IS '核电',
+    ENERGY_KZS IS '可再生',
+    ENERGY_MT IS '煤炭',
+    ENERGY_OTHER IS '其他',
+    ENERGY_RQ IS '燃气',
+    ENERGY_SD IS '水电',
+    ENERGY_SW_HD IS '核电实物量',
+    ENERGY_SW_KZS IS '可再生实物量',
+    ENERGY_SW_MT IS '煤炭实物量',
+    ENERGY_SW_RQ IS '燃气实物量',
+    ENERGY_SW_SD IS '水电实物量',
+    ENERGY_SW_SY IS '石油实物量',
+    ENERGY_SY IS '石油',
+    FIELD_GY IS '工业',
+    FIELD_JT IS '交通',
+    FIELD_JZ IS '建筑业',
+    FIELD_NY IS '农业',
+    FIELD_OTHER IS '其他领域',
+    FIELD_SH IS '生活',
+    FIELD_SY IS '商业',
+    GDPDH IS '单位 GDP 电耗',
+    GDPNH IS '单位 GDP 能耗',
+    INDUSTRY_DL IS '电力',
+    INDUSTRY_GT IS '钢铁',
+    INDUSTRY_HG IS '化工',
+    INDUSTRY_JC IS '建材',
+    INDUSTRY_OTHER IS '其他工业行业',
+    INDUSTRY_SH IS '石化',
+    INDUSTRY_YS IS '有色',
+    LJJD IS '累计进度',
+    NHZLMB IS '能耗总量目标',
+    NXTB IS '能效同比（单位 GDP 能耗同比）',
+    REGION_CODE IS '区域编码',
+    REGION_NAME IS '区域名称',
+    REGION_TYPE IS '区域类型',
+    SEASON IS '季度1，2，3，4',
+    WNMB IS '五年目标',
+    WQJD IS '万企进度',
+    YEAR IS '年份',
+    ZDH IS '总电耗',
+    ZHNH IS '综合能耗',
+    ZLTB IS '总量同比?(%)' );
+
+COMMIT;app@GJJN-QZ-02:~> 
+```
+
+![](http://99btgc01.info/uploads/2016/04/clipboard.png)
 
 ## 参考引用
 
