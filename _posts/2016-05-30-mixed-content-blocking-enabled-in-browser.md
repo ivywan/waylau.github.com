@@ -39,6 +39,7 @@ Mixed Content: The page at 'https://59.255.134.5/gov/' was loaded over HTTPS, bu
 方法1：
 
 右上角盾牌，点击“加载不安全的脚本”。
+
 缺点：每次重启浏览器，都需要重新点击设置，比较繁琐。
 
 ![](http://99btgc01.info/uploads/2016/05/001.png)
@@ -48,6 +49,7 @@ Mixed Content: The page at 'https://59.255.134.5/gov/' was loaded over HTTPS, bu
 
 Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后面添加
 `--allow-running-insecure-content` 参数。打开浏览器后就会自动启动混合模式。
+
 ![](http://99btgc01.info/uploads/2016/05/003.png)
 
 
@@ -60,13 +62,15 @@ Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后�
 
 方法1：
 
-浏览器对有风险的脚本进行了拦截，点击“显示所有内容”
+浏览器对有风险的脚本进行了拦截，点击“显示所有内容”。
+
 缺点：每次重启浏览器，都需要重新点击，比较繁琐。
 
 ![](http://99btgc01.info/uploads/2016/05/004.png)
 
 
 方法2：
+
 对 IE 进行设置，启动显示混合内容。
 
 ![](http://99btgc01.info/uploads/2016/05/005.png)
@@ -76,6 +80,7 @@ Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后�
 方法1：
 
 在地址栏单击盾牌图标 ，并在下拉菜单中单击“选项”按钮，在弹出的菜单中选择“暂时解除保护”。
+
 缺点：每次重启浏览器，都需要重新点击设置，比较繁琐。
 
 ![](http://99btgc01.info/uploads/2016/05/006.png)
