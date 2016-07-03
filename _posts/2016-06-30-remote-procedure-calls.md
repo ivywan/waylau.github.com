@@ -18,6 +18,8 @@ RPC 是远程过程调用（Remote Procedure Call）的缩写形式，该名词�
 
 ![描述了数据报在一个简单的RPC传递的过程](/images/post/20160630-rpc.png)
  
+图 描述了数据报在一个简单的RPC传递的过程
+ 
 注：上述论文，可以在线阅读 <http://www.cs.virginia.edu/~zaher/classes/CS656/birrel.pdf>。
 
 
@@ -679,3 +681,8 @@ person {
 
 JSON
 花药封送处理格式,得到了相当大的声望是JSON。这不是一个二进制格式如谷歌协议缓冲区,因此适合使用在消息通过HTTP传输负载。JSON是基于JavaScript,人类可读和可写,容易解析。这是介绍“无脂替代XML”。目前,转换器存在添加了50多种语言和远程过程调用json - rpc。记住,这只是一个消息传递格式和JSON并没有试图提供RPC库和支持服务发现、绑定、托管和垃圾收集。
+
+
+## 参考引用
+
+* <https://www.cs.rutgers.edu/~pxk/417/notes/03-rpc.html>
