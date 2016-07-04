@@ -108,7 +108,7 @@ I/O 多路复用模型使用了 Reactor 设计模式实现了这一机制。
 
 同步 I/O 操作引起请求进程阻塞，直到 I/O 操作完成。异步 I/O 操作不引起请求进程阻塞。
 
-![](https://raw.githubusercontent.com/waylau/essential-java/master/images/net/1-11%20Comparison%20of%20the%20five%20IO%20models.png)
+![](https://raw.githubusercontent.com/waylau/essential-java/master/images/net/1-12%20Comparison%20of%20the%20five%20IO%20models.png)
 
 
 ## 常见 Java I/O 模型
