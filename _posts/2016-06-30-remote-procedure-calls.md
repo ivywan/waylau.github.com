@@ -10,11 +10,11 @@ tags: [Web,RPC]
 
 本文介绍了什么是远程过程调用(RPC)，以及实现远程过程调用(RPC)有哪些常用的方法。
 
-<!--more-->
+<!-- more -->
 
 ## 什么是 RPC 
 
-RPC 是远程过程调用（Remote Procedure Call）的缩写形式，该名词的提出最早由 Birrell 和 Nelson 在 1984 发表于 ACM Transactions on Computer Systems 的论文《Implementing remote procedure calls》。RPC 是指计算机 A 上的进程，调用另外一台计算机 B 上的进程，其中 A 上的调用进程被挂起，而 B 上的被调用进程开始执行，调用放可以通过使用参数将信息传送给被调用方，而后可以通过传回的结果得到信息。而这一过程，对于开发人员来说是透明的。
+RPC 是远程过程调用（Remote Procedure Call）的缩写形式，该名词的提出最早由 Birrell 和 Nelson 在 1984 发表于 ACM Transactions on Computer Systems 的论文《Implementing remote procedure calls》。RPC 是指计算机 A 上的进程，调用另外一台计算机 B 上的进程，其中 A 上的调用进程被挂起，而 B 上的被调用进程开始执行，当值返回给 A 时，A 进程继续执行。调用方可以通过使用参数将信息传送给被调用方，而后可以通过传回的结果得到信息。而这一过程，对于开发人员来说是透明的。
 
 ![描述了数据报在一个简单的RPC传递的过程](/images/post/20160630-rpc.png)
  
@@ -685,4 +685,5 @@ JSON
 
 ## 参考引用
 
+* <http://www.cs.virginia.edu/~zaher/classes/CS656/birrel.pdf>
 * <https://www.cs.rutgers.edu/~pxk/417/notes/03-rpc.html>
