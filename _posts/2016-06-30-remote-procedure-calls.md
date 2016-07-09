@@ -244,55 +244,43 @@ DCE RPC 定义了名为 NDR (Network Data Representation) 对网络进行编码�
 
 ### 微软 DCOM(COM+)
 
-1992年4月,微软发布 Windows 3.1 包括一种机制称为 OLE (Object Linking and Embedding)。这允许一个程序动态链接其他库来支持的其他功能,如将一个电子表格嵌入到 Word文 档。OLE 演变成一种叫做 COM (Component Object Model)。一个 COM 对象是一个二进制文件。使用 COM 服务访问的程序标准化接口的 COM 对象而不是其内部结构。COM 对象命名与全局唯一标识符(guid)和类对象与类的id。几种方法来创建一个COM对象(例如CoGetInstanceFromFile)。COM库查找相应的二进制代码(一个DLL[3]或可执行文件)在系统注册表中,创建对象,并向调用者返回一个接口指针。
+1992年4月,微软发布 Windows 3.1 包括一种机制称为 OLE (Object Linking and Embedding)。这允许一个程序动态链接其他库来支持的其他功能,如将一个电子表格嵌入到 Word 文档。OLE 演变成一种叫做 COM (Component Object Model)。一个 COM 对象是一个二进制文件。使用 COM 服务访问的程序标准化接口的 COM 对象而不是其内部结构。COM 对象用全局唯一标识符(GUID)来命名，用类的 ID 来识别对象的类。几种方法来创建一个 COM 对象(例如 CoGetInstanceFromFile)。COM 库在系统注册表中查找相应的二进制代码(一个DLL或可执行文件),来创建对象,并给调用者返回一个接口指针。COM 的着眼点是在于同一台计算机上不同应用程序之间的通讯需求.
 
-介绍了DCOM(分布式COM)与Windows NT 4.0在1996年和组件对象模型的扩展允许对象之间通信的机器。这是后来重新命名为COM +。自DCOM是为了支持访问远程COM对象,这一过程需要创建一个对象需要供应网络的名称服务器以及类ID。微软提供了一些机制来实现这一点。最透明的是远程机器的名字固定在注册表中(或DCOM类商店),与特定类关联ID。这种方式,应用程序不知道访问远程对象,可以使用相同的接口指针,它将为当地的COM对象。或者,一个应用程序可以指定机���名称作为参数。
+DCOM（ Distributed Component Object Model）是 COM 的扩展，它支持不同的两台机器上的组件间的通信，而且不论它们是运行在局域网、广域网、还是 Internet 上。借助 DCOM 你的应用程序将能够任意进行空间分布。DCOM 于1996年在 Windows NT4.0 中引入的，后来更名为 COM+。由于 DCOM 是为了支持访问远程 COM 对象，需要创建一个对象的过程，此时需要提供服务器的网络名以及类 ID。微软提供了一些机制来实现这一点。最透明的方式是远程计算机的名称固定在注册表（或 DCOM 类存储）里，与特定类 ID 相关联。以此方式，应用程序不知道它正在访问一个远程对象，并且可以使用与访问本地 COM 对象相同的接口指针。另一方面，应用程序也可指定一个机器名作为参数。
 
-DCOM服务器在运行时服务对象的能力。一个服务被称为“服务控制管理器(SCM),DCOM库的一部分,负责连接到服务器端SCM和请求服务器上创建的对象。在服务器上,代孕过程负责加载组件和运行它们。这不同于RPC模型如ONC和DCE服务为一个特定的接口不是先天的开始。这个代理过程能够同时处理多个客户。
 
-支持类的特定实例的标识(单个对象),DCOM对象提供了一个称为绰号命名功能。每个实例一个对象可以创建自己的名称并将其传递回客户端。客户端就可以引用它后或通过其他进程的绰号。一个绰号本身是一个对象。其IMoniker接口可以用于定位,激活和访问绑定ob-ject没有任何对象的位置信息。
+由于 DCOM 是 COM 这个组件技术的无缝升级，所以你能够从你现有的有关 COM  得知识中获益，你的以前在 COM 中开发的应用程序、组件、工具都可以移入分布式的环境中。DCOM 将为你屏蔽底层网络协议的细节，你只需要集中精力于你的应用。
 
-支持多种类型的名字:
+DCOM 最大的缺点是这是微软独家的解决办法，在跨防火墙方面的工作做得不是很好（大多数RPC系统也有类似的问题），因为防火墙必须允许某些端口来允许 ORPC 和 DCOM 通过。
+ 
+### CORBA
 
-文件名字
-这个绰号使用文件类型(如。. doc”)来确定合适的对象(如。Microsoft Word)。微软支持持久性:存储对象的数据在一个文件中。如果一个文件代表一个存储对象,DCOM将使用文件中的类ID来识别对象。
-URL的绰号
-这抽象访问url通过Internet协议(如http、https、ftp)一个COM接口。绑定一个URL绰号允许远程数据检索。在内部,URL绰号使用经由WinInet API来检索数据。
-类的名字
-这是与其他名字一起使用,覆盖类ID查找机制。
-在DCOM:ORPC
-微软DCOM本身不提供远程过程调用功能。它是一组库假定RPC系统是可用的。在DCOM是微软的RPC机制,称为对象RPC(ORPC)。这是一个轻微的DCE RPC协议的扩展与补充支持一个接口指针标识符(IPID),版本信息,信息和可扩展性。接口指针标识符用于识别一个特定类的实例调用将被处理。它还提供了推荐的能力——远程对象引用(IPIDs)可以传递。
+虽然 DCE 修复的一些 Sun RPC 的缺点，但某些缺陷依然存在。例如，如果服务器没有运行,客户端是无法连接到远程过程进行调用的。管理员必须要确保在任何客户端试图连接到服务器之前将服务器启动。如果一个新服务或接口添加到了系统，客户端是不能发现的。最后,面向对象语言期望在函数调用中体现多态性，即不同类型的数据的函数的行为应该有所不同，而这点恰恰是传统的 RPC 所不支持的。
 
-封送处理机制是相同的网络数据表示(NDR)在DCE RPC与一个新类型代表一个军事化管理界面(IPID)。编组,DCOM(ORPC)需要知道方法、参数和数据结构。这是来自一个接口定义语言,称为MIDL,微软的接口定���语言。正如所料,这是相同的DCE与扩展定义对象的申请。MIDL文件使用IDL编译器编译,生成c++代码用于封送和解封。客户端调用代理和服务器端称为存根。两者都是COM对象,可以由COM加载库。
+CORBA (Common Object Request Broker Architecture) 就是为了解决上面提到的各种问题。是由 OMG 组织制订的一种标准的面向对象应用程 序体系规范。或者说 CORBA体系结构是对象管理组织（OMG）为解决分布式处理环境(DCE)中，硬件和软件系统的互连而提出的一种解决方案。OMG 成立于1989年，作为一个非营利性组织，集中致力于开发在技术上具有先进性、在商业上具有可行性并且独立于厂商的软件互联规范，推广面向对象模型技术，增强软件的可移植性（Portability）、可重用性（Reusability）和互操作性（Interoperability）。该组织成立之初，成员包括 Unisys、Sun、Cannon、Hewlett-Packard 和 Philips 等在业界享有声誉的软硬件厂商，目前该组织拥有800多家成员。
 
-远程引用计数
-服务器之间的主要区别面向对象编程和基于函数的编程功能持续而从他们的类对象的实例化和删除(代码库仍固定,但数据区域分配每次创建一个对象)。服务器,这意味着它必须准备创建新的对象和知道何时释放内存(破坏对象)当对象不再需要(没有其他引用留给对象)。
+CORBA体系的主要内容包括以下几部分。
+* 对象请求代理 （Object Request Broker，ORB）。负责对象在分布环境中透明地收发请求和响应，它是构建分布对象应用、在异构或同构环境下实现应用间互操作的基础。
+* 对象服务（Object Services）。为使用和实现对象而提供的基本对象集合，这些服务应独立于应用领域。主要的 CORBA 服务有：名录服务（Naming Service）、事件服务（Event Service）、生命周期服务（Life Cycle Service）、关系服务（Relationship Service）以及事务服务（Transaction Service）等。这些服务几乎包括分布系统和面向对象系统的各个方面，每个组成部分都非常复杂。
+* 公共设施（Common Facilitites）。向终端用户提供一组共享服务接口，例如系统管理、组合文档和电子邮件等。
+* 应用接口（Application Interfaces）。由销售商提供的可控制其接口的产品，相应于传统的应用层表示，处于参考模型的最高层。
+* 领域接口（Domain Interfaces）。为应用领域服务而提供的接口，如OMG 组织为 PDM 系统制定的规范。
 
-微软DCOM这是否明确而不是自动。对象生命周期由远程引用计数控制。一个调用RemAddRef当新的引用一个对象添加和移除RemRelease当参考。服务器上的对象本身被删除时,引用计数为0。
 
-这种机制没问题但并非万无一失。如果一个客户端异常终止,没有消息被发送到的对象的引用计数递减客户机使用。处理这种情况下,服务器的同事一个过期时间为每个对象和依赖周期性消息从客户端保持对象引用的活着。这个机制被称为震性。服务器维护一个ping频率(pingPeriod)和超时时间(numPingsToTimeOut)。客户端运行一个后台进程发送一套平:所有远程对象的id在特定服务器上。如果超时周期到期没有ping收到,所有的引用被清除。
+当客户端发出请求时,ORB 做了如下事情:
 
-DCOM总结
-微软DCOM RPC系统早是一个重大的改进。对象RPC层是一个增量的改进/ DCE RPC和允许对象引用。DCOM层基于COM的访问对象(通过函数表),并提供访问远程对象的透明度。远程引用管理仍有些问题,它必须显式地完成但至少有一个机制来支持这个。绰号机制提供了一个COM接口以支持命名对象,是否远程引用,对象存储在文件系统中,或url。最大的缺点是DCOM是微软的解决方案。它也不能穿过防火墙的工作(大多数RPC系统的问题),因为防火墙必须允许交通流之间的某些ORPC所使用的端口和DCOM。
+* 在客户端编组参数；
+* 定位服务器对象。如果有必要的话,它会在服务器创建一个过程来处理请求；
+* 如果服务器是远程是,就使用 RPC 或 socket 来传送请求；
+* 在服务器上将参数解析成为服务器格式；
+* 在服务器上组装返回值；
+* 如果服务器是远程的，就将返回值传回；
+* 在客户端对返回结果进行解析；
 
-CORBA
-即使DCE修复的一些缺点太阳RPC,某些缺陷依然存在。例如,如果一个服务器没有运行,客户端无法连接到远程过程调用。是管理员的责任,以确保所需的任何客户机试图连接到服务器之前开始。如果一个新服务或接口添加到系统,没有是一个客户端可以发现这一点。在某些环境中,它可能有助于客户能够了解在运行时服务及其接口。最后,面向对象语言期望多态性在函数调用(不同类型的数据的函数的行为可能有所不同)。传统的RPC没有支持。
 
-CORBA(公共对象请求代理体系结构)是解决这些和其他问题。它是一种体系结构由一个行业300多家公司财团称为对象管理组织(OMG)。这个架构的规范自1989年以来一直在发展。我们的目标是提供对分布式异构的面向对象的应用程序的支持。对象可能是托管在一个网络的电脑(一个对象不是分布式)。该规范是独立于任何编程语言,操作系统或网络,使在这些平台互操作性。
+IDL(Interface Definition Language) 是用于指定类的名字、属性和方法。它不包含对象的实现。IDL 编译器生成代码来处理编组、解封以及ORB与网络之间的交互。它会生成客户机和服务器存根。IDL 是编程语言中立，支持包括C、C++、Java、Perl、Python、Ada、COBOL、Smalltalk、Objective C 和 LISP 等语言。一个示例IDL如下所示:
 
-在CORBA,当客户端希望调用一个对象上的一个操作(方法),它使一个请求和响应。请求和响应通过对象请求代理(ORB)。ORB代表整个的界面库,存根函数,和服务器隐藏通信机制,激活,从客户端和存储的服务器对象。它允许对象在运行时发现对方和调用服务。
-
-当客户端发出请求时,ORB:
-
-执法官参数(客户端)。
-定位服务器对象。如果有必要的话,它会创建一个过程在服务器处理请求。
-如果服务器是远程,传送请求(使用RPC或套接字)。
-对参数为服务器格式(在服务器上)。
-警察返回值(在服务器上
-如果服务器是远程传输返回。
-对结果在客户端。
-一个接口定义语言(IDL)用于指定类的名字,他们的属性和方法。它不包含对象的实现。IDL编译器生成代码来处理编组,解封,ORB /网络交互。它生成客户机和服务器存根。IDL是编程语言中立。绑定存在许多种,包括C、c++、Java、Perl、Python、Ada、COBOL、Smalltalk,Objective - C,口齿不清。一个示例IDL如下所示:
-
+```
 Module StudentObject {
     Struct StudentInfo {
         String name;
@@ -306,83 +294,67 @@ Module StudentObject {
         void putinfo(in StudentInfo data);
     };
 };
+```
+
 IDL数据类型包括:
 
-基本类型:长、短字符串,浮动,…
-构造类型:结构、工会、枚举、序列
-类型的对象引用
-任何类型:一个动态类型的值
-编程是最常见的实现通过对象引用和请求:客户发出请求在CORBA对象使用对象引用和调用所需的方法。例如,使用IDL如上所示,一个可能的代码如:
+* 基本类型:long, short, string, float, …
+* 构造类型:struct、union、枚举、序列
+* 对象引用
+* any 类型:一个动态类型的值
 
+
+编程中最常见的实现方式是通过对象引用来实现请求。下面是一个使用 IDL 的例子:
+
+```
 Student st = ... // get object reference
 try {
     StudentInfo sinfo = st.getinfo("Fred Grampp");
 } catch (Throwable e) {
     ... // error
 }
-在幕后,IDL编译器生成的存根函数。这段代码导致调用存根函数,然后警察参数,并将它们发送到服务器。客户端和服务器可以使用存根只有类和方法的名称在编译时是已知的。否则,CORBA支持动态绑定:组装方法调用在运行时通过动态调用接口(DII)。这个接口提供了调用设置类,构建参数列表,使电话。服务器对应(用于创建一个服务器接口动态地)被称为动态框架接口(DSI)[4]。客户端可以在运行时发现的类和方法的名称通过接口库。这个名称服务器可以查询发现是什么类的服务器支持和对象实例化。
+```
 
-CORBA规范的功能接口和功能但是离开了实际实现和数据表示格式个人ORB供应商。这导致了一个CORBA实现可能的情况不一定能够与另一个。应用程序通常需要一些返工从一个供应商的CORBA产品转移到另一个。
+在CORBA体系规范中定义了多种类型的服务（Service），如命名（Naming）、生存期（LifeCycle）、事件（Event）、事务（Transaction）、对象持久化（Persistent Objects）、查询（Query）、特征（Property）、时间（Time）等服务功能。　在CORBA规范中，没有明确说明不同厂商的中间件产品要实现所有的服务功能，并且允许厂商开发自己的服务类型。因此, 不同厂商的ORB产品对CORBA服务的支持能力不同，使我们在针对待开发系统的功能进行中间件产品选择时，有更多的选择余地。
 
-1996年,CORBA 2.0规范中添加互操作性为目标。标准定义了一个名为IIOP的网络协议(Internet orb间协议)这将工作在任何基于TCP / IP的CORBA实现。事实上,因为终于有一个标准化的、记录协议,IIOP本身可用于系统甚至不提供一个CORBA的API。例如,它可以作为传输的实现Java RMI(RMI / IIOP)。
+CORBA 的不足有：
+* 尽管有多家供应商提供CORBA产品，但是仍找不到能够单独为异种网络中的所有环境提供实现的供应商。不同的 CORBA 实现之间会出现缺乏互操作性的现象，从而造成一些问题；而且，由于供应商常常会自行定义扩展，而 CORBA 又缺乏针对多线程环境的规范，对于像 C 或 C++ 这样的语言，源码兼容性并未完全实现。
+* CORBA 过于复杂，要熟悉 CORBA，并进行相应的设计和编程，需要许多个月来掌握，而要达到专家水平，则需要好几年。
 
-希望提供一个证据充分的网络协议,如CORBA IIOP的全功能的设置功能是开启一个广泛的多元化的互联网服务。组织可以主机CORBA-aware服务。客户在互联网上可以查询这些服务,找出他们的动态接口,调用函数。这些服务的广泛性可以像HTML web access无处不在。这并没有发生。基于http的web服务胜出。
+更多有关 CORBA 的优缺点，可以参阅 Michi Henning 的《[The rise and fall of CORBA](http://queue.acm.org/detail.cfm?id=1142044)》。 
 
-CORBA的总结
-基本上,CORBA构建在早些时候RPC系统并提供下列附加功能:
+### Java RMI
 
-静态或动态方法调用(RPC)只支持静态绑定。
-每一个ORB支持运行时元数据来描述每一个服务器接口系统。
-ORB可以代理调用在一个过程中,多个进程在同一台机器上,或者分布式过程。
-多态的消息传递:ORB调用一个函数在一个目标对象。相同的功能可能有不同的影响取决于对象的类型。
-自动实例化对象不运行
-与其他orb通信。
-CORBA还提供了一组全面的服务(称为COS,CORBA服务)来管理对象:
-生命周期服务:提供操作创建、复制、移动和删除组件。
-持久性服务(外部化):提供一个接口,用于在存储服务器上存储组件。
-命名服务:允许组件定位其他组件的名字。
-事件服务:组件可以注册/注销他们的特定事件的兴趣。
-并发控制服务:允许对象获取锁代表事务。
-协调事务服务:提供两阶段提交(稍后将详细介绍这个协议)。
-查询服务:允许对象的查询操作。
-授权服务:允许计量使用的组件。
-物业服务:允许名称/属性被关联到一个组件。
-价格的能力和灵活性是复杂性。尽管CORBA���可靠和分布式服务管理提供了全面的支持,部署和使用CORBA一般,而陡峭的学习曲线。将它与语言并不总是直截了当。除非人能真正利用CORBA的功能,通常是更容易使用更简单和更少的强大的系统调用远程过程。CORBA享有体面程度的成功,但只有在池的用户而不是一个电子社区。CORBA在迟到标准化TCP / ip协议和部署基于互联网的服务。
+CORBA 旨在提供一组全面的服务来管理在异构环境中(不同语言、操作系统、网络)的对象。Java 在其最初只支持通过 socket 来实现分布式通信。1995年,作为 Java 的缔造者，Sun 公司开始创建一个 Java 的扩展，称为 Java RMI(Remote Method Invocation，远程方法调用)。Java RMI 允许程序员创建分布式应用程序时，可以从其他 Java 虚拟机(JVM)调用远程对象的方法。
 
-Java RMI
-CORBA旨在提供一组全面的服务来管理对象在异构环境中(不同语言、操作系统、网络)。Java,在其最初的《盗梦空间》,支持从远程站点下载的代码,但它只支持分布式通信是通过套接字。1995年,太阳(Java)的创造者开始创建一个扩展Java称为Java RMI(远程方法调用)。Java RMI允许程序员创建分布式应用程序可以调用远程对象的方法从其他Java虚拟机(jvm)。
+一旦应用程序(客户端)引用了远程对象的，就可以进行远程调用了。这是通过 RMI 提供的命名服务(RMI 注册中心)来查找远程对象，来接收作为返回值的引用。Java RMI 在概念上类似于 RPC，但能在不同地址空间支持对象调用的语义。
 
-可以进行远程调用一旦应用程序(客户端)对远程对象的引用。这是通过查找远程对象的命名服务(RMI注册中心)提供的RMI和接收作为返回值的引用。Java RMI在概念上类似于RPC对接支持对象调用的语义在不同地址空间。
+与大多数其他诸如 CORBA 的 RPC 系统不同，RMI 只支持基于 Java 来构建，但也正是这个原因， RMI 对于语言来说更加整洁，无需做额外的数据序列化工作。Java RMI 的设计目标应该是:
 
-Java的一个领域的设计不同于大多数RPC系统CORBA和RMI是构建Java。太阳RPC,DCE RPC,微软的COM +和ORPC和CORBA的设计语言,架构和操作系统(微软除外)独立。虽然这些功能丢失,增益是RMI干净符合语言和没有需要标准化的数据表示(Java到处都使用相同的字节次序)。Java RMI的设计目标应该是:
+* 适应语言,集成到语言,易于使用；
+* 支持无缝的远程调用对象；
+* 支持服务器到 applet 的回调；
+* 保存 Java 对象的安全环境；
+* 支持分布式垃圾回收；
+* 支持多种传输。
 
-适应语言,集成到语言,易于使用。
-支持无缝的远程调用对象。
-支持回调服务器applet。
-保存Java对象的安全环境。
-支持分布式垃圾回收。
-支持多种传输。
-分布式对象模型类似于本地Java对象模型在以下方面:
 
-引用一个对象可以作为参数传递或返回的结果。
+分布式对象模型与本地 Java 对象模型相似点在于:
+* 引用一个对象可以作为参数传递或作为返回的结果；
+* 远程对象可以投到任何使用 Java 语法实现的远程接口的集合上；
+* 内置 Java instanceof 操作符可以用来测试远程对象是否支持远程接口。
 
-远程对象可以投到任何支持的远程接口的集合的实现使用Java语法。
+不同点在于:
+* 远程对象的类是与远程接口进行交互,而不是与这些接口的实现类；
+* Non-remote 参数对于远程方法调用来说是通过复制,而不是通过引用；
+* 远程对象是通过引用来传递,而不是复制实际的远程实现；
+* 客户端必须处理额外的异常。
 
-内置Java instanceof操作符可以用来测试远程对象支持的远程接口。
+#### 接口和类
 
-对象模型与本地Java对象模型的不同之处在于以下方面:
+所有的远程接口都继承自 `java.rmi.Remote` 接口。例如:
 
-类的远程对象与远程接口交互,从来没有与这些接口的实现类。
-
-Non-remote参数(结果)远程方法调用是通过复制,而不是引用。
-
-通过远程对象引用,而不是实际的远程复制实现。
-
-客户必须处理额外的异常。
-
-接口和类
-所有java.rmi.Remote远程接口扩展接口。例如:
-
+```java
 public interface bankaccount extends Remote
 {
     public void deposit(float amount)
@@ -392,19 +364,23 @@ public interface bankaccount extends Remote
         throws OverdrawnException,
         java.rmi.RemoteException;
 }
-注意,每个方法必须声明java.rmi。远程异常抛出的条款。这个异常在客户端通过RMI系统只要远程方法调用失败。然后创建一个实现这些远程接口。
+```
 
-远程对象类
-不可见的程序员,java.rmi.server。RemoteObject类提供了远程对象的语义通过实现hashCode、=和toString[5]。所需的函数创建对象,让他们可以远程由java.rmi.server提供。RemoteServer和子类。java.rmi.server。UnicastRemoteObject类定义了一个单播(单一)远程对象的引用是有效的只有当服务器进程还活着。
+注意,每个方法必须在 throws 里面声明  `java.rmi.RemoteException` 。 只要客户端调用远程方法出现失败，这个异常就会抛出。
 
-存根
-图5。Java RMI流
-图5。Java RMI流
-Java RMI通过创建存根函数。存根和rmic编译器生成。Java 1.5以来,Java支持在运行时动态生成存根类。编译器、rmic仍然存在并支持并提供各种编译选项。
+#### 远程对象类
 
-定位对象
-提供了引导名称服务器用于存储命名对远程对象的引用。一个远程对象引用可以存储使用的基于url的方法类java.rmi.Naming。例如,
+`Java.rmi.server.RemoteObject` 类提供了远程对象实现的语义包括hashCode、equals　和　toString。 `java.rmi.server.RemoteServer`　及其子类提供让对象实现远程可见。`java.rmi.server.UnicastRemoteObject` 类定义了客户机与服务器对象实例建立一对一的连接.
 
+#### 存根
+
+Java RMI 通过创建存根函数来工作。存根由 rmic 编译器生成。自 Java 1.5 以来,Java 支持在运行时动态生成存根类。编译器 rmic 会提供各种编译选项。
+
+#### 定位对象
+
+引导名称服务提供了用于存储对远程对象的命名引用。一个远程对象引用可以存储使用类 `java.rmi.Naming` 提供的基于 URL 的方法。例如,
+
+```
 BankAccount acct = new BankAcctImpl();
 String url = "rmi://java.sun.com/account";
 // bind url to remote object
@@ -412,59 +388,52 @@ java.rmi.Naming.bind(url, acct);
 
 // look up account
 acct = (BankAccount)java.rmi.Naming.lookup(url);
-RMI架构
-图6。Java RMI逻辑视图
-图6。Java RMI逻辑视图
-RMI是一个三层架构(图6)。最上面一层是存根和骨架层。它传输数据到远程引用层通过元帅流。元帅流使用一个名为对象序列化的方法,使对象之间传输地址空间(通过他们的副本,除非他们通过远程对象的引用)。任何类,将作为一个参数用于远程方法必须实现serializable接口。这确保了对象数据(序列化)可以被转化为一个字节流(要素)通过网络传输。序列化是封送的一个核心方面:将数据转换成一串字节,以便它可以通过网络发送或存储在文件或数据库中。
+```
 
-客户端存根执行以下步骤:
+![图7 Java RMI 工作流程](/images/post/20160630-rpc-rmi_flow.png)
 
-启动远程对象调用
-执法官参数
-通知应调用远程引用层调用
-对返回值或异常
-通知远程引用层调用完成。
-服务器存根(骨架):
+图7 Java RMI 工作流程
 
-对参数
-使实际的远程对象实现返回值
-执法官调用的返回值(或异常)
-存根和骨架类在运行时确定并根据需要动态加载的。
+#### RMI 架构
 
-远程引用层处理低层传输接口。它负责执行一个特定的远程引用协议独立的客户端服务器存根和骨架。
+RMI 是一个三层架构(图8)。最上面是 Stub/Skeleton layer（存根/骨架层）。方法调用从 Stub、Remote Reference Layer (远程引用层)和 Transport Layer（传输层）向下，传递给主机，然后再次经传 Transport Layer 层，向上穿过 Remote Reference Layer 和 Skeleton ，到达服务器对象。 Stub 扮演着远程服务器对象的代理的角色，使该对象可被客户激活。Remote Reference Layer 处理语义、管理单一或多重对象的通信，决定调用是应发往一个服务器还是多个。Transport Layer 管理实际的连接，并且追踪可以接受方法调用的远程对象。服务器端的 Skeleton 完成对服务器对象实际的方法调用，并获取返回值。返回值向下经 Remote Reference Layer 、服务器端的 Transport Layer 传递回客户端，再向上经 Transport Layer 和 Remote Reference Layer 返回。最后，Stub 程序获得返回值。 
 
-每个远程对象实现选择自己的远程引用子类。各种协议是可能的。例如:
+要完成以上步骤需要有以下几个步骤： 
 
-单播点对点
-调用复制对象组
-支持一个特定的复制策略
-支持持久远程对象引用(使激活远程对象的)
-重新连接策略
-RMI传输层是传输的协议栈的一部分。它:
+* 生成一个远程接口；
+* 实现远程对象(服务器端程序)；
+* 生成 Stub 和 Skeleton(服务器端程序)；
+* 编写服务器程序 ；
+* 编写客户程序 ；
+* 注册远程对象；
+* 启动远程对象 
 
-建立连接,连接管理
-显示器连接活性
-监听来电
-维护一个表的远程对象驻留在地址空间
-设置为来电联系
-定位的目标远程调用和传递到调度程序的连接。
-RMI分布式垃圾回收
-RMI创建一个分布式环境中,一个进程运行在一个Java虚拟机(JVM)可以访问对象居民在进程运行在不同的JVM(而且很可能不同的系统)。这意味着服务器进程需要知道当一个对象不再是由客户端和引用可以删除(垃圾收集)。在JVM中,Java使用引用计数和时间表对象的垃圾收集时,引用计数归零。在jvm,RMI,Java支持两种操作:脏和清洁。本地JVM定期发送一个肮脏的调用服务器的JVM对象时仍在使用。定期根据这个肮脏的调用是补发的租赁时间服务器。当客户端没有更多的本地引用远程对象,它发送一个干净调用服务器。与DCOM,服务器不需要计算每个客户机使用的对象,只是通知当一个对象不再需要。如果它不接收肮脏或干净的消息对象的租赁时间到期之前,然后安排对象删除。
+![图8 Java RMI 架构](/images/post/20160630-rpc-rmi_logical.png)
 
-第三代rpc和Web服务
-由于使用互联网暴涨后推出的web浏览器,浏览器成为占主导地位的模型用于访问信息。设计的首要任务是提供用户通过浏览器访问,而不是编程访问访问或操作数据。
+图8 Java RMI 架构
 
-程序员渴望远程托管的服务项目,而不是用户可以使用。网页设计关注的内容。解析出表现方面往往是繁琐的。传统RPC解决方案可以工作在互联网上,但问题是,他们通常依赖于动态端口分配(联系名称服务器找出端口服务器提供一组特定的接口使用)。这是与最佳实践的防火墙配置,限制可用端口甚至可能检查协议保证,例如,HTTP流量确实是在一个有效的HTTP格式。
+ 
+#### RMI 分布式垃圾回收
 
-Web服务成为一组协议,允许发表,服务发现,用于技术无关的形式。即服务不应该依赖于客户的语言,操作系统,或机器架构。
+根据 Java 虚拟机的垃圾回收机制原理，在分布式环境下，服务器进程需要知道哪些对象不再由客户端引用，从而可以被删除(垃圾回收)。在 JVM中,Java 使用引用计数。当引用计数归零时，对象将会垃圾回收。在RMI,Java 支持两种操作:dirty 和 clean。本地 JVM 定期发送一个 dirty 到服务器来说明该对象仍在使用。定期重发 dirty 的周期是由服务器租赁时间来决定的。当客户端没有需要更多的本地引用远程对象时,它发送一个 clean 调用给服务器。不像 DCOM,服务器不需要计算每个客户机使用的对象,只是简单的做下通知。如果它租赁时间到期之前没有接收到任何 dirty 或者 clean 的消息，则可以安排将对象删除。
 
-共同实现的web服务是使用web服务器作为服务请求的管道。客户端访问该服务通过一个HTTP协议发送到服务器上的web服务器。web服务器配置识别URL的一部分路径名或文件名后缀并将请求传递给特定的浏览器插件模块。这个模块可以除去头,解析数据(如果需要),并根据需要调用其他函数或模块。这个流一个常见的例子是一个浏览器的支持Java servlet,在HTTP请求转发到JVM运行用户的服务器代码。
+## 第三代 RPC : Web Services
 
-xml - rpc
-XML - RPC是1998年作为一个RPC消息传递协议的请求和响应为人类可读的XML封送处理过程。XML格式使用显式输入和运输在HTTP协议,缓解了传统企业的防火墙问题为RPC服务器应用程序打开额外的端口。
+由于互联网的兴起，Web 浏览器成为占主导地位的用于访问信息的模型。现在的应用设计的首要任务大多数是提供用户通过浏览器来访问，而不是编程访问或操作数据。
 
-xml - rpc消息的一个例子是:
+网页设计关注的是内容。解析展现方面往往是繁琐的。传统 RPC 解决方案可以工作在互联网上，但问题是，他们通常严重依赖于动态端口分配，往往要进行额外的防火墙配置。
 
+Web Services 成为一组协议,允许服务被发表、发现，并用于技术无关的形式。即服务不应该依赖于客户的语言、操作系统或机器架构。
+
+Web Services 的实现一般是使用 Web 服务器作为服务请求的管道。客户端访问该服务，首先是通过一个 HTTP 协议发送请求到服务器上的 Web 服务器。Web 服务器配置识别 URL 的一部分路径名或文件名后缀并将请求传递给特定的浏览器插件模块。这个模块可以除去头、解析数据(如果需要),并根据需要调用其他函数或模块。对于这个实现流，一个常见的例子是浏览器对于 Java Servlet 的支持。HTTP 请求会被转发到 JVM 运行的服务端代码来执行处理。
+
+### XML-RPC
+
+XML-RPC 是1998年作为一个 RPC 消息传递协议，将请求和响应封装解析为人类可读的 XML格式。XML 格式基于 HTTP 协议，缓解了传统企业的防火墙需要为 RPC 服务器应用程序打开额外的端口的问题。
+
+下面是一个 XML-RPC 消息的例子:
+
+```
 <methodCall>
     <methodName>
         sample.sumAndDifference
@@ -474,91 +443,314 @@ xml - rpc消息的一个例子是:
         <param><value><int> 3 </int></value></param>
     </params>
 </methodCall>
-这是一个请求运行方法命名为样本。sumAndDifference与两个整数参数:5和3。xml - rpc支持的基本数据类型是:整数、字符串、布尔值、双,dateTime.iso8601。此外,base64编码任意二进制数据类型和数组和结构允许一个定义数组和结构,分别。
+```
 
-xml - rpc没有设计时考虑到任何特定的语言,不是设计一套完整的软件来处理远程过程。存根生成、对象管理和服务查找不在协议。现在库对许多不同的语言,包括Apache xml - rpc Java、python和perl。其中的一些(如提供一个非常干净的过程接口。python和perl)。
+这个例子中，方法 sumAndDifference 有两个整数参数 5 和 3。
 
-xml - rpc是一个简单的规范(约7页)没有雄心勃勃的目标:它只关注消息和不处理垃圾收集,远程对象,远程过程的名称服务和其他方面。然而,即使没有广泛的产业支持,简单的协议导致广泛采用的协议。
+XML-RPC 支持的基本数据类型是:int、string、boolean、double 和 dateTime.iso8601。此外,还有 base64 类型用于编码任意二进制数据， array 和 struct 允许定义数组和结构。
 
-肥皂
-xml - rpc创建SOAP规范作为依据,曾经站从简单对象访问协议。首字母缩写已经下降由于协议不再是简单的和不限于访问对象。协议组成的一个财团组织成立于1998年的微软和IBM的大力支持。的最新版本是2007年。SOAP为无状态指定XML格式的消息交换,包括rpc样式的过程调用调用以及更一般的信息可能包括多个响应。
+XML-RPC 不限制语任何特定的语言，也不是一套完整的软件来处理远程过程，诸如存根生成、对象管理和服务查找都不在协议内。现在有很多库针可以针对不同的语言，比如 Apache XML-RPC 可以用于 Java、Python 和Perl。 
 
-它继续在xml - rpc,提供用户定义的数据摘要,能够指定收件人,指定不同类型的消息,和更多的功能。通过HTTP SOAP主要是实现为XML消息。xml - rpc、SOAP是一种消息格式。对象引用,它没有定义垃圾收集存根一代,甚至传输协议。
+XML-RPC 是一个简单的规范(约7页)，没有雄心勃勃的目标——它只关注消息，而并不处理诸如垃圾收集、远程对象、远程过程的名称服务和其他方面的问题。然而,即使没有广泛的产业支持,简单的协议却能广泛采用。
 
-SOAP成为流行的web服务的构建块。然而,它只是提供了一个标准化的消息结构。补充,需要一种方法来定义一个服务,这样可以创建正确的SOAP消息。WSDL、Web服务描述语言作为描述Web服务的方法。它是一个XML文档,可以喂给一个程序,将生成软件,发送和接收SOAP消息���实际上,WSDL作为接口定义语言,将生成存根(虽然,根据不同的语言,他们可能是也可能不是对程序员是透明的函数调用)。
+### SOAP
 
-WSDL文档包括四个部分:
+SOAP（Simple Object Access Protocol，简单对象访问协议），是以 XML-RPC 规范作为创建 SOAP 的依据，成立于1998年，获得微软和 IBM 的大力支持。该协议在创建初期只作为一种对象访问协议，但由于 SOAP 的发展，其协议已经不单只是用于简单的访问对象，所以这种 SOAP 缩写已经在标准的1.2版后被废止了。1.2版在2003年6月24日成为 W3C 的推荐版本。SOAP 指定 XML 作为无状态的消息交换格式，包括了 RPC 式的过程调用。
 
-类型:定义了web服务使用的数据类型。
+有关 SOAP 的标准可以参阅 <https://www.w3.org/TR/soap/>。
 
-消息:描述数据元素或参数,使用的消息。
+SOAP 只是一种消息格式，并未定义垃圾回收、对象引用、存根生成和传输协议。
 
-端口类型:描述提供的业务服务。这包括操作和输入和输出消息(第2部分),每个操作使用。
+下面是一个简单的例子：
 
-绑定:为每个端口定义消息格式和协议细节。例如,它可以定义rpc样式的消息。注意港口一词在这里是一个抽象的消息端点(第3部分中定义的),而不是一个TCP或UDP端口号。
+```
+<?xml version='1.0' ?>
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"> 
+ <env:Header>
+  <m:reservation xmlns:m="http://travelcompany.example.org/reservation" 
+          env:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+           env:mustUnderstand="true">
+   <m:reference>uuid:093a2da1-q345-739r-ba5d-pqff98fe8j7d</m:reference>
+   <m:dateAndTime>2001-11-29T13:20:00.000-05:00</m:dateAndTime>
+  </m:reservation>
+  <n:passenger xmlns:n="http://mycompany.example.com/employees"
+          env:role="http://www.w3.org/2003/05/soap-envelope/role/next"
+           env:mustUnderstand="true">
+   <n:name>Åke Jógvan Øyvind</n:name>
+  </n:passenger>
+ </env:Header>
+ <env:Body>
+  <p:itinerary
+    xmlns:p="http://travelcompany.example.org/reservation/travel">
+   <p:departure>
+     <p:departing>New York</p:departing>
+     <p:arriving>Los Angeles</p:arriving>
+     <p:departureDate>2001-12-14</p:departureDate>
+     <p:departureTime>late afternoon</p:departureTime>
+     <p:seatPreference>aisle</p:seatPreference>
+   </p:departure>
+   <p:return>
+     <p:departing>Los Angeles</p:departing>
+     <p:arriving>New York</p:arriving>
+     <p:departureDate>2001-12-20</p:departureDate>
+     <p:departureTime>mid-morning</p:departureTime>
+     <p:seatPreference/>
+   </p:return>
+  </p:itinerary>
+  <q:lodging
+   xmlns:q="http://travelcompany.example.org/reservation/hotels">
+   <q:preference>none</q:preference>
+  </q:lodging>
+ </env:Body>
+</env:Envelope>
+```
+其中`<soap:Envelope>`是 SOAP 消息中的根节点，是 SOAP 消息中必须的部分。`<soap:Header>`是 SOAP 消息中可选部分，是指消息头。`<soap:Body>`是 SOAP 中必须部分，是指消息体。
 
-即使他们使用XML、SOAP和WSDL是供人类食用。通常情况下,一个程序员提供一个服务将创建一个接口定义在一些本地语言,如Java和使用工具如Java2WSDL或wsdl。exe创建一个WSDL文档。程序员想要使用一个服务将WSDL文档并运行它通过WSDL2Java等程序(一个apache Exclipse插件)或wsdllib(python)生成模板代码。
+上面例子的 SOAP 消息结构如下：
 
-微软。NET Remoting
-微软的COM +(DCOM)机制原本为嵌入对象在程序中动态和总是有些低级的实现。程序通常不得不提供显式引用计数和支持跨越语言和库是不均匀的。例如,Visual Basic为框架提供了大力支持,Visual c++需要更多的编程。微软检修和。net ehnaced这些机制。
+![图9 SOAP 消息结构](/images/post/20160630-soap-message-structure.png)
 
-微软的。网络由一个开发框架和运行时环境以创建平台无关的应用程序。。净API提供了一组类面向对象编程网络感知。公共中间语言(CIL)是一种基于堆栈的、低级的、面向对象的汇编语言,独立于机器,确保不同的语言和系统之间的互操作性支持。网络平台。公共语言运行时(CLR)是一种ECMA标准。基类,它描述了指令集和执行环境。净框架。它提供了一组共同的特征,包括对象生命周期管理、垃圾收集,安全,和版本。编译器的支持。净(例如Visual Studio c++,c#,和Visual Basic;大约40种语言已经一定程度的。网络支持)生成CIL代码,然后编译DLL的部署和EXE文件符合可移植可执行(PE)格式。当这些文件是由CLR,它首先翻译CIL为本机代码的执行。
+图9 SOAP 消息结构
 
-。NET Remoting的组件。净处理远程对象。它允许一个调用远程对象的方法。在远程对象调用方法,必须来源于MarshalByRefObject远程对象。这类似于Java的远程类并确保远程rererence对象可以创建。一个代理(存根)是在创建对象时激活和CLR拦截所有调用对象。CLR知道哪些类是远程,以便它可以处理过程的情况下请求一个新的远程对象和一个本地对象。任何作为参数传递的对象必须实现iSerializable接口,这是analagous Java序列化的类。这将确保对象的数据可以被转换成一个平面网络友好的格式:可以发送的字节数组在网络信息。
+SOAP 它只是提供了一个标准化的消息结构，为了实现它往往需要用 WSDL 来描述  Web Services 的方法。WSDL (Web Services Description Language) 是基于 XML 的一种用于描述 Web Services 以及如何访问  Web Services 的语言。
 
-创建对象分为两类:服务器激活对象和客户端激活的对象。服务器激活对象不依赖于客户端控制一个对象的生命周期。客户端与客户端激活的对象,不创建一个新对象,使用它,然后删除它。有两种形式的服务器激活对象。一个叫对象完全是无状态的。每创建一个对象的新实例调用。该操作被触发客户端调用对象上的方法。一个单例对象持续不断。相同的实例对象是用于所有客户端请求。服务器创建的对象只有在对象不存在。从那时起,所有客户端请求共享对象。在服务器上创建一个客户端激活的对象(如当客户端请求一个新对象。通过一个新的操作)。它类似于COM +模型,支持多个引用同一个对象和多个不同的客户来自同一类创建的对象。它还支持分布式垃圾回收。
+WSDL 文档包括以下几个部分:
+* 类型（Types）:定义了  Web Services 使用的数据类型；
+* 消息（n/a）:描述使用消息的数据元素或参数；
+* 接口（Interface）:描述服务提供的操作。这包括操作以及每个操作所使用的输入和输出消息；
+* 绑定（Binding）:为每个端口定义消息格式和协议细节。例如,它可以定义 RPC 式的消息；
+* 服务（Service）：系统功能相关的集合，包括其关联的接口、操作、消息等；
+* 终点（Endpoint）：定义了地址或者 Web Services 的连接点；
+* 操作（Operation）：定义了 SOAP 的动作，以及消息编码的方式。
 
-租赁分布式垃圾收集器
-。NET Remoting使用租赁的分布式垃圾收集器(LDGC)客户端激活的对象。垃圾收集是不需要服务器激活的对象,因为对象要么持续的时间永远一个方法调用(调用)或(singleton)。租赁管理器管理对象租赁服务器。使用的服务器对象被认为是只要租赁没有过期。如果一个客户想要联系租赁到期时,它必须提供一个赞助对象。客户的赞助对象可以选择延长租约,如果必要的。
+下面是一个 WSDL 2.0 版本的例子：
 
-垃圾收集器使用对象的以下参数:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.w3.org/ns/wsdl" 
+             xmlns:tns="http://www.tmsws.com/wsdl20sample" 
+             xmlns:whttp="http://schemas.xmlsoap.org/wsdl/http/"
+             xmlns:wsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+             targetNamespace="http://www.tmsws.com/wsdl20sample">
 
-InitialLeaseTime:初始远程对象的生命周期(5分钟违约)
+<documentation>
+    This is a sample WSDL 2.0 document. 
+</documentation>
 
-LeaseManagePollTime:间隔租赁经理调查leases10秒默认)
+   <!-- Abstract type -->
+   <types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns="http://www.tmsws.com/wsdl20sample"
+                targetNamespace="http://www.example.com/wsdl20sample">
+                 
+         <xs:element name="request"> ... </xs:element>
+         <xs:element name="response"> ... </xs:element>
+      </xs:schema>
+   </types>
 
-sponsorshipTimeOut:等待一个赞助商的时间框架可用(2分钟违约)
+   <!-- Abstract interfaces -->
+   <interface name="Interface1">
+      <fault name="Error1" element="tns:response"/>
+      <operation name="Get" pattern="http://www.w3.org/ns/wsdl/in-out">
+         <input messageLabel="In" element="tns:request"/>
+         <output messageLabel="Out" element="tns:response"/>
+      </operation>
+   </interface>
 
-每次调用方法,租赁时间设置为马克西姆(租赁时间,过期时间,RenewOnCallTime)。renewOnCallTime将继续租赁的时间在每一个方法调用。请求者(客户端)更新其租赁当leaseTime白白的流逝了。这租约的方法意味着服务器不需要引用计数与COM +一样。
+   <!-- Concrete Binding Over HTTP -->
+   <binding name="HttpBinding" interface="tns:Interface1" 
+            type="http://www.w3.org/ns/wsdl/http">
+      <operation ref="tns:Get" whttp:method="GET"/>
+   </binding>
+   
+   <!-- Concrete Binding with SOAP-->
+   <binding name="SoapBinding" interface="tns:Interface1" 
+            type="http://www.w3.org/ns/wsdl/soap" 
+            wsoap:protocol="http://www.w3.org/2003/05/soap/bindings/HTTP/"
+            wsoap:mepDefault="http://www.w3.org/2003/05/soap/mep/request-response">
+      <operation ref="tns:Get" />
+   </binding>
 
-的。NET Remoting组件设计为一个同质环境:之间的通信。净的过程。时间。净支持Web服务。NET remoting不是专门为它设计的。一个扩展名为Web服务增强(WSE),旨在处理基于soap的Web服务。WSE支持以下字母汤的协议和格式:
+   <!-- Web Service offering endpoints for both bindings-->
+   <service name="Service1" interface="tns:Interface1">
+      <endpoint name="HttpEndpoint" 
+                binding="tns:HttpBinding" 
+                address="http://www.example.com/rest/"/>
+      <endpoint name="SoapEndpoint" 
+                binding="tns:SoapBinding" 
+                address="http://www.example.com/soap/"/>
+   </service>
+</description>
+```
 
-HTTP:超文本传输协议、TCP / IP通信协议运行
+### Microsoft .NET Remoting 
 
-XML:扩展标记语言,数据表示格式
+从微软的产品角度来看，可以说 .NET Remoting 就是 DCOM 的一种升级，它改善了很多功能，并极好的融合到 .NET 平台下。Microsoft .NET Remoting 提供了一种允许对象通过应用程序域与另一对象进行交互的框架。
 
-SOAP:简单对象访问协议,协议发送和接收消息和调用函数
+.NET Remoting 提供了一种允许对象通过应用程序域与另一对象进行交互的框架。这种框架提供了多种服务，包括激活和生存期支持，以及负责与远程应用程序进行消息传输的通讯通道。格式化程序用于在消息通过通道传输之前，对其进行编码和解码。应用程序可以在注重性能的场合使用二进制编码，在需要与其他远程处理框架进行交互的场合使用 XML 编码。在从一个应用程序域向另一个应用程序域传输消息时，所有的 XML 编码都使用 SOAP 协议。出于安全性方面的考虑，远程处理提供了大量挂钩，使得在消息流通过通道进行传输之前，安全接收器能够访问消息和序列化流
 
-WSDL:Web服务定义语言,XML文档定义了可用性服务及其接口
+ 
+#### .NET Remoting 对象 
 
-UDDI:通用描述、发现和集成,为发现服务协议
+有三类对象可以配置为 .NET Remoting 对象。您可以根据应用程序的需要来选择对象类型：
+* Single Call（单一调用对象）：
+Single Call 能且只能为一个请求提供服务。在需要对象完成的工作量有限的情况下 Single Call 非常有用。Single Call 对象通常不要求存储状态信息，并且不能在方法调用之间保留状态信息。但是，Single Call对象可以配置为负载平衡模式。
+* Singleton Objects（单一元素对象）：
+Singleton Objects 可以为多个客户端提供服务，因此可以通过保存客户端调用的状态信息来实现数据共享。当客户端之间需要明确地共享数据，并且不能忽略创建和维护对象的开销时，这类对象非常有用。
+* Client-Activated Objects (CAO，客户端激活的对象)：
+CAO 是服务器端的对象，将根据来自客户端的请求激活这些对象。这种激活服务器对象的方法与传统的 COM coclass 激活方法非常相似。当客户端使用“new”运算符提交对服务器对象的请求时，会向远程应用程序发送一个激活请求消息。随后，服务器创建被请求类的实例，并向调用它的客户端应用程序返回 ObjRef。然后，使用此 ObjRef 在客户端上创建代理。客户端的方法调用将在代理上执行。客户端激活的对象可以为特定的客户端（不能跨越不同的客户端对象）保存方法调用之间的状态信息。每个“new”调用都会向服务器类型的独立实例返回代理。
 
-与之相比。净,SOAP只是底层消息传递协议。创建一个。净的web服务,一个写了。净对象如果是由当地客户访问,标志着一个属性,它应该提供给Web客户端。ASP。净,扩展到微软的web服务器(IIS)提供了框架,接受HTTP请求,并将其映射到对象调用。WSDL文档描述可用的服务是通过检查元数据自动生成。网络对象。
+在 .NET Remoting 中，可以通过以下方式在应用程序之间传递对象：
+* 作为方法调用中的参数，例如：`public int myRemoteMethod (MyRemoteObject myObj)`
+* 方法调用的返回值,例如：`public MyRemoteObject myRemoteMethod(String myString)`
+* 访问 .NET 组件的属性或字段得到的值,例如：`myObj.myNestedObject`
 
-的进化。网络设施Windows通信框架(WCF),这是另一个改革提供一个统一的通信框架也支持与其他平台的互操作性。它仍然使用。NET CLR环境和支持库。
 
-与WCF服务在服务实现类,它实现一个或多个方法和包含一个服务契约,它定义了一个客户端可以使用的方法,和数据合同,它定义了数据结构。服务类被编译到一个基于clr的语言。服务类通常是编译成库和运行在一个主机的过程。宿主进程可以之一:
+对于 Marshal By Value (MBV,按值封送)的对象，当它在应用程序之间传递时，将创建一个完整的副本。
 
-IIS(web服务器)主机进程(必须使用HTTP上的SOAP)的通信协议
+对于 Marshal By Reference (MBR，按引用封送)的对象，当它在应用程序之间传递时，将创建该对象的引用。当对象引用 (ObjRef) 到达远程应用程序后，将转变成“代理”返回给原始对象。
+　　
+下面是一个简单 .NET Remoting 服务器对象的代码示例：
 
-窗口激活服务
+```
+using System;
+using System.Runtime.Remoting;
+namespace myRemoteService
+{
+    // Well Known Web Service object
+    public class myRemoteObject : MarshalByRefObject
+    {
+        // Method myRemoteMethod
+        public String myRemoteMethod(String s) 
+        {
+         return "Hello World";
+        }
+    }
+}
+```
+ 
+下面是客户端代码来访问这个对象：
 
-一个任意的过程
+```
+using System;
+using System.Runtime.Remoting;
+using System.Runtime.Remoting.Channels;
+using System.Runtime.Remoting.Channels.Http;
+using myRemoteService;
+public class Client
+{
+    public static int Main(string[] args)
+    {
+        ChannelServices.RegisterChannel(new HttpChannel());
+      // Create an instance of a myRemoteObject class 
+   myRemoteObject myObj = ( myRemoteObject)Activator.GetObject(typeof(myRemoteObject),
+            "http://myHost:7021/host/myRemoteObject.soap");
+      myObj. myRemoteMethod ("Hello World");
+        return 0;
+    }
+}
+```
 
-端点定义为服务指定:
+#### 租用生存期
 
-一个地址:服务的URL
-绑定:协议和安全机制的描述
-合同* *:服务合同的名称表明这个端点公开
-Windows通信框架提供了一组可能的绑定(通信选项):
+对于那些具有在应用程序之外传送的对象引用的对象，将创建一个租用。租用具有一个租用时间。如果租用时间为 0，则租用过期，对象就断开与 .NET Romoting 框架的连接。一旦 AppDomain 中的所有对象引用都被释放，则下次垃圾回收时，该对象将被回收。租用控制了对象的生存期。
 
-绑定	描述
-BasicHttpBinding	HTTP上的SOAP(可选HTTPS)
-WsHttpBinding	相同但支持可靠的消息传输,安全性和事务
-NetTcpBinding	二进制编码SOAP / TCP,支持可靠的消息传输,安全性和事务
-完全	与没有肥皂——理想的RESTful HTTP或HTTPS通信;数据XML、JSON或二进制
-NetNamedPipesBinding	二进制编码命名管道上的SOAP(多平台不仅WCF-WCF沟通)
-NetMsmqBinding	二进制编码的MSMQ之上的SOAP(也不是多平台;WCF-WCF唯一的)
+对象有默认的租用阶段。当客户端要在同一服务器对象中维护状态时，可以通过许多方法扩展租用阶段，使对象继续生存:
+
+* 服务器对象可以将其租用时间设置为无限，这样 Remoting 在垃圾回收时就不会回收此对象。
+* 客户端可以调用 `RemotingServices.GetLifetimeService` 方法，从 AppDomain 的租用管理器获取服务器对象的租用。然后，客户端可以通过 Lease 对象调用 Lease.Renew 方法以延长租用。
+* 客户端可用 AppDomain 的租用管理器为特定的租用注册负责人。当 Remoting 对象的租用过期时，租用管理器将通知负责人提出续租的申请。
+* 如果设置了 `ILease::RenewOnCallTime` 属性，则每次调用 Remoting 对象时，都会用 RenewOnCallTime 属性指定的总时间更新租用。
+
+#### 集成 .NET Remoting 对象
+
+.NET Remoting 对象可以集成在：
+* 托管可执行项:
+.NET Remoting 对象可以集成在任何常规的 .NET EXE 或托管服务中。
+* .NET 组件服务:
+.NET Remoting 对象可以集成在 .NET 组件服务基础结构中，以便利用各种 COM+ 服务，例如：事务、JIT 和对象池等。
+* IIS : .NET Remoting 对象可以集成在 Internet Information Server (IIS) 中。默认情况下，集成在 IIS 中的 Remoting 对象通过 HTTP 通道接收消息。要在 IIS 中集成 Remoting 对象，必须创建一个虚拟的根，并将 remoting.config 文件复制到其中。包含 Remoting 对象的可执行文件或 DLL 应放在 IIS 根指向的目录下的 bin 目录中。需要注意的是，IIS 根名称应该与配置文件中指定的应用程序名称相同。当第一个消息到达应用程序时，Remoting 配置文件会自动加载。使用这种方法，可以提供 .NET Remoting 对象作为 Web 服务。
+
+下面是一个 Remoting.cfg 文件的例子：
+
+```
+<configuration>
+  <system.runtime.remoting>
+    <application name="RemotingHello">
+
+      <service>
+        <wellknown mode="SingleCall" 
+                   type="Hello.HelloService, Hello" 
+                   objectUri="HelloService.soap" />
+      </service>
+
+      <channels>
+        <channel port="8000" 
+type="System.Runtime.Remoting.Channels.Http.HttpChannel, 
+System.Runtime.Remoting" />
+      </channels>
+
+    </application>
+  </system.runtime.remoting>
+</configuration>
+```
+
+#### 通道服务 (System.Runtime.Remoting.Channels)
+
+.NET 应用程序和 AppDomain 之间使用消息进行通信。.NET 通道服务为这一通信过程提供了基础传输机制。
+
+.NET 框架提供了 HTTP 和 TCP 通道，但是第三方也可以编写并使用自己的通道。默认情况下，HTTP 通道使用 SOAP 进行通信，TCP 通道使用二进制有效负载。
+
+通过使用可以编写到集成混合应用程序中的自定义通道，可以插入通道服务（使用 IChannel）。
+
+下面是一个加载通道服务的例子：
+
+```
+public class myRemotingObj
+{
+    HttpChannel httpChannel;
+    TcpChannel tcpChannel;
+    public void myRemotingMethod()
+    {
+        httpChannel =  new HttpChannel();
+        tcpChannel  =  new TcpChannel();
+        ChannelServices.RegisterChannel(httpChannel);
+        // Register the HTTP Channel 
+        ChannelServices.RegisterChannel(tcpChannel);
+        // Register the TCP Channel  
+
+    }
+} 
+```
+
+
+#### 序列化格式化程序 (System.Runtime.Serialization.Formatters)
+
+　　.NET 序列化格式化程序对 .NET 应用程序和 AppDomain 之间的消息进行编码和解码。在 .NET 运行时中有两个本地格式化程序，分别为二进制 (System.Runtime.Serialization.Formatters.Binary) 和 SOAP (System.Runtime.Serialization.Formatters.Soap)。
+　　通过实现 IRemotingFormatter 接口，并将其插入到上文介绍的通道中，可以插入序列化格式化程序。这样，您可以灵活地选择通道和格式化程序的组合方式，采用最适合应用程序的方案。本文后面的小节将讨论这一问题。
+　　例如：您可以采用 HTTP 通道和二进制格式化程序（串行化二进制数据），也可以采用 TCP 通道和 SOAP 格式。
+　　Remoting 上下文
+　　上下文是一个包含共享公共运行时属性的对象的范围。某些上下文属性的例子是与同步和线程紧密相关的。当 .NET 对象被激活时，运行时将检查当前上下文是否一致，如果不一致，将创建新的上下文。多个对象可以同时在一个上下文中运行，并且一个 AppDomain 中可以有多个上下文。
+　　一个上下文中的对象调用另一个上下文中的对象时，调用将通过上下文代理来执行，并且会受组合的上下文属性的强制策略影响。新对象的上下文通常是基于类的元数据属性选择的。
+　　可以与上下文绑定的类称作上下文绑定类。上下文绑定类可以具有称为上下文属性的专用自定义属性。上下文属性是完全可扩展的，您可以创建这些属性并将它们附加到自己的类中。与上下文绑定的对象是从 System.ContextBoundObject 导出的。
+　　.NET Remoting 元数据和配置文件 
+
+　　元数据
+　　.NET 框架使用元数据和程序集来存储有关组件的信息，使得跨语言编程成为可能。.NET Remoting 使用元数据来动态创建代理对象。在客户端创建的代理对象具有与原始类相同的成员。但是，代理对象的实现仅仅将所有请求通过 .NET Remoting 运行时转发给原始对象。序列化格式化程序使用元数据在方法调用和有效负载数据流之间来回转换。
+　　客户端可以通过以下方法获取访问 Remoting 对象所需的元数据信息：
+服务器对象的 .NET 程序集 - 服务器对象可以创建元数据程序集，并将其分发给客户端。在编译客户端对象时，客户端对象可以引用这些程序集。在客户端和服务器都是托管组件的封闭环境中，这种方法非常有用。
+Remoting 对象可以提供 WSDL（请参阅 Web 服务说明语言 [WSDL] 1.1）文件，用于说明对象及其方法。所有可以根据 WSDL 文件读取和生成 SOAP 请求的客户端都可以调用此对象，或使用 SOAP 与之通信。使用与 .NET SDK 一同分发的 SOAPSUDS.EXE 工具，.NET Remoting 服务器对象可以生成具有元数据功能的 WSDL 文件。当某个组织希望提供所有客户都能访问和使用的公共服务时，这种方法非常有用。
+.NET 客户可以使用 SOAPSUDS 工具从服务器上下载 XML 架构（在服务器上生成），生成仅包含元数据（没有代码）的源文件或程序集。您可以根据需要将源文件编译到客户端应用程序中。如果多层应用程序中某一层的对象需要访问其他层的 Remoting 对象，则经常使用此方法。
+　　配置文件
+　　配置文件（.config 文件）用于指定给定对象的各种 Remoting 特有信息。通常情况下，每个 AppDomain 都有自己的配置文件。使用配置文件有助于实现位置的透明性。配置文件中指定的详细信息也可以通过编程来完成。使用配置文件的主要好处在于，它将与客户端代码无关的配置信息分离出来，这样在日后更改时仅需要修改配置文件，而不用编辑和重新编译源文件。.NET Remoting 的客户端和服务器对象都使用配置文件。
+　　典型的配置文件包含以下信息及其他信息：
+集成应用程序信息
+对象名称
+对象的 URI
+注册的通道（可以同时注册多个通道）
+服务器对象的租用时间信息
+　　下面是一个配置文件示例（请注意，在后续版本中可能会改为 XML 格式）：
+
 XML Web服务的Java API
 Java RMI设计与远程对象进行交互,但建立主要是与Java模型。此外,它不是由web服务和基于http的消息传递。出现了大量的软件来支持基于java的web服务。我们将看看其中的一个概述。jax - ws(XML Web服务的Java API)作为Web服务的Java API设计信息和远程过程调用。它允许一个调用基于Java的web服务使用Java RMI(即。,相对透明的程序员)。jax - ws的一个目标是平台互操作性。API使用SOAP和WSDL。双方不需要Java环境,客户和服务定义的WSDL文档。
 
@@ -718,3 +910,10 @@ JSON
 
 * <http://www.cs.virginia.edu/~zaher/classes/CS656/birrel.pdf>
 * <https://www.cs.rutgers.edu/~pxk/417/notes/03-rpc.html>
+* <http://queue.acm.org/detail.cfm?id=1142044>
+* <https://en.wikipedia.org/wiki/Web_Services_Description_Language>
+* <https://msdn.microsoft.com/en-us/library/ms973864.aspx>
+
+
+
+<http://www.yesky.com/224/1606224all.shtml>
