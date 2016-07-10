@@ -726,107 +726,188 @@ public class myRemotingObj
 
 #### 序列化格式化程序 (System.Runtime.Serialization.Formatters)
 
-　　.NET 序列化格式化程序对 .NET 应用程序和 AppDomain 之间的消息进行编码和解码。在 .NET 运行时中有两个本地格式化程序，分别为二进制 (System.Runtime.Serialization.Formatters.Binary) 和 SOAP (System.Runtime.Serialization.Formatters.Soap)。
-　　通过实现 IRemotingFormatter 接口，并将其插入到上文介绍的通道中，可以插入序列化格式化程序。这样，您可以灵活地选择通道和格式化程序的组合方式，采用最适合应用程序的方案。本文后面的小节将讨论这一问题。
-　　例如：您可以采用 HTTP 通道和二进制格式化程序（串行化二进制数据），也可以采用 TCP 通道和 SOAP 格式。
-　　Remoting 上下文
-　　上下文是一个包含共享公共运行时属性的对象的范围。某些上下文属性的例子是与同步和线程紧密相关的。当 .NET 对象被激活时，运行时将检查当前上下文是否一致，如果不一致，将创建新的上下文。多个对象可以同时在一个上下文中运行，并且一个 AppDomain 中可以有多个上下文。
-　　一个上下文中的对象调用另一个上下文中的对象时，调用将通过上下文代理来执行，并且会受组合的上下文属性的强制策略影响。新对象的上下文通常是基于类的元数据属性选择的。
-　　可以与上下文绑定的类称作上下文绑定类。上下文绑定类可以具有称为上下文属性的专用自定义属性。上下文属性是完全可扩展的，您可以创建这些属性并将它们附加到自己的类中。与上下文绑定的对象是从 System.ContextBoundObject 导出的。
-　　.NET Remoting 元数据和配置文件 
+.NET 序列化格式化程序对 .NET 应用程序和 AppDomain 之间的消息进行编码和解码。在 .NET 运行时中有两个本地格式化程序，分别为二进制 (`System.Runtime.Serialization.Formatters.Binary`) 和 SOAP (`System.Runtime.Serialization.Formatters.Soap`)。
 
-　　元数据
-　　.NET 框架使用元数据和程序集来存储有关组件的信息，使得跨语言编程成为可能。.NET Remoting 使用元数据来动态创建代理对象。在客户端创建的代理对象具有与原始类相同的成员。但是，代理对象的实现仅仅将所有请求通过 .NET Remoting 运行时转发给原始对象。序列化格式化程序使用元数据在方法调用和有效负载数据流之间来回转换。
-　　客户端可以通过以下方法获取访问 Remoting 对象所需的元数据信息：
-服务器对象的 .NET 程序集 - 服务器对象可以创建元数据程序集，并将其分发给客户端。在编译客户端对象时，客户端对象可以引用这些程序集。在客户端和服务器都是托管组件的封闭环境中，这种方法非常有用。
-Remoting 对象可以提供 WSDL（请参阅 Web 服务说明语言 [WSDL] 1.1）文件，用于说明对象及其方法。所有可以根据 WSDL 文件读取和生成 SOAP 请求的客户端都可以调用此对象，或使用 SOAP 与之通信。使用与 .NET SDK 一同分发的 SOAPSUDS.EXE 工具，.NET Remoting 服务器对象可以生成具有元数据功能的 WSDL 文件。当某个组织希望提供所有客户都能访问和使用的公共服务时，这种方法非常有用。
-.NET 客户可以使用 SOAPSUDS 工具从服务器上下载 XML 架构（在服务器上生成），生成仅包含元数据（没有代码）的源文件或程序集。您可以根据需要将源文件编译到客户端应用程序中。如果多层应用程序中某一层的对象需要访问其他层的 Remoting 对象，则经常使用此方法。
-　　配置文件
-　　配置文件（.config 文件）用于指定给定对象的各种 Remoting 特有信息。通常情况下，每个 AppDomain 都有自己的配置文件。使用配置文件有助于实现位置的透明性。配置文件中指定的详细信息也可以通过编程来完成。使用配置文件的主要好处在于，它将与客户端代码无关的配置信息分离出来，这样在日后更改时仅需要修改配置文件，而不用编辑和重新编译源文件。.NET Remoting 的客户端和服务器对象都使用配置文件。
-　　典型的配置文件包含以下信息及其他信息：
-集成应用程序信息
-对象名称
-对象的 URI
-注册的通道（可以同时注册多个通道）
-服务器对象的租用时间信息
-　　下面是一个配置文件示例（请注意，在后续版本中可能会改为 XML 格式）：
+通过实现 IRemotingFormatter 接口，并将其插入到上文介绍的通道中，可以插入序列化格式化程序。这样，您可以灵活地选择通道和格式化程序的组合方式，采用最适合应用程序的方案。
 
-XML Web服务的Java API
-Java RMI设计与远程对象进行交互,但建立主要是与Java模型。此外,它不是由web服务和基于http的消息传递。出现了大量的软件来支持基于java的web服务。我们将看看其中的一个概述。jax - ws(XML Web服务的Java API)作为Web服务的Java API设计信息和远程过程调用。它允许一个调用基于Java的web服务使用Java RMI(即。,相对透明的程序员)。jax - ws的一个目标是平台互操作性。API使用SOAP和WSDL。双方不需要Java环境,客户和服务定义的WSDL文档。
+例如：您可以采用 HTTP 通道和二进制格式化程序（串行化二进制数据），也可以采用 TCP 通道和 SOAP 格式。
 
-创建一个RPC端点
-在服务器端,进行下面的步骤来创建一个RPC端点(也就是说,RPC服务客户可用):
+#### Remoting 上下文
 
-定义一个接口(Java接口)
+上下文是一个包含共享公共运行时属性的对象的范围。某些上下文属性的例子是与同步和线程紧密相关的。当 .NET 对象被激活时，运行时将检查当前上下文是否一致，如果不一致，将创建新的上下文。多个对象可以同时在一个上下文中运行，并且一个 AppDomain 中可以有多个上下文。
 
-实现服务
+一个上下文中的对象调用另一个上下文中的对象时，调用将通过上下文代理来执行，并且会受组合的上下文属性的强制策略影响。新对象的上下文通常是基于类的元数据属性选择的。
 
-创建一个出版商,全心服务的一个实例并发布一个名字
+可以与上下文绑定的类称作上下文绑定类。上下文绑定类可以具有称为上下文属性的专用自定义属性。上下文属性是完全可扩展的，您可以创建这些属性并将它们附加到自己的类中。与上下文绑定的对象是从 `System.ContextBoundObject` 导出的。
+
+#### .NET Remoting 元数据和配置文件 
+
+##### 元数据
+
+.NET 框架使用元数据和程序集来存储有关组件的信息，使得跨语言编程成为可能。.NET Remoting 使用元数据来动态创建代理对象。在客户端创建的代理对象具有与原始类相同的成员。但是，代理对象的实现仅仅将所有请求通过 .NET Remoting 运行时转发给原始对象。序列化格式化程序使用元数据在方法调用和有效负载数据流之间来回转换。
+
+客户端可以通过以下方法获取访问 Remoting 对象所需的元数据信息：
+* 服务器对象的 .NET 程序集 : 服务器对象可以创建元数据程序集，并将其分发给客户端。在编译客户端对象时，客户端对象可以引用这些程序集。在客户端和服务器都是托管组件的封闭环境中，这种方法非常有用。
+* Remoting 对象可以提供 WSDL文件，用于说明对象及其方法。所有可以根据 WSDL 文件读取和生成 SOAP 请求的客户端都可以调用此对象，或使用 SOAP 与之通信。使用与 .NET SDK 一同分发的 SOAPSUDS.EXE 工具，.NET Remoting 服务器对象可以生成具有元数据功能的 WSDL 文件。当某个组织希望提供所有客户都能访问和使用的公共服务时，这种方法非常有用。
+* .NET 客户可以使用 SOAPSUDS 工具从服务器上下载 XML 架构（在服务器上生成），生成仅包含元数据（没有代码）的源文件或程序集。您可以根据需要将源文件编译到客户端应用程序中。如果多层应用程序中某一层的对象需要访问其他层的 Remoting 对象，则经常使用此方法。
+
+##### 配置文件
+　　
+配置文件（.config 文件）用于指定给定对象的各种 Remoting 特有信息。通常情况下，每个 AppDomain 都有自己的配置文件。使用配置文件有助于实现位置的透明性。配置文件中指定的详细信息也可以通过编程来完成。使用配置文件的主要好处在于，它将与客户端代码无关的配置信息分离出来，这样在日后更改时仅需要修改配置文件，而不用编辑和重新编译源文件。.NET Remoting 的客户端和服务器对象都使用配置文件。
+
+典型的配置文件包含以下信息及其他信息：
+* 集成应用程序信息
+* 对象名称
+* 对象的 URI
+* 注册的通道（可以同时注册多个通道）
+* 服务器对象的租用时间信息
+
+下面是一个配置文件示例：
+
+```xml
+<configuration>
+  <system.runtime.remoting>
+    <application name="HelloNew">
+
+      <lifetime leaseTime="20ms" sponsorshipTimeout="20ms" 
+renewOnCallTime="20ms" />  
+
+      <client url="http://localhost:8000/RemotingHello">
+        <wellknown type="Hello.HelloService, MyHello" 
+      url="http://localhost:8000/RemotingHello/HelloService.soap" />
+        <activated type="Hello.AddService, MyHello"/>
+      </client>
+      
+      <channels>
+        <channel port="8001" 
+      type="System.Runtime.Remoting.Channels.Http.HttpChannel, 
+      System.Runtime.Remoting" />
+      </channels>
+      
+    </application>
+  </system.runtime.remoting>
+</configuration>
+```
+
+#### .NET Remoting 方案
+
+了解 .NET Remoting 如何工作之后，让我们来看一下各种方案，分析如何在不同的方案中充分发挥 .NET Remoting 的优势。下表列出了可能的客户端/服务器组合，以及默认情况下采用的底层协议和有效负载。请注意，.NET Remoting 框架是可扩展的，您可以编写自己的通信通道和序列化格式化程序。
+
+客户端 | 	服务器	 | 有效负载 |	协议
+---- | ---- | ---- | ----
+.NET 组件 | 	.NET 组件 | 	SOAP/XML |	http
+.NET 组件	| .NET 组件	| 二进制	 | TCP
+托管/非托管 | .NET Web 服务 | SOAP/XML | http
+.NET 组件 | 非托管的传统 COM 组件 | 	NDR（网络数据表示形式） | 	DCOM
+非托管的传统 COM 组件 | .NET 组件 | 	NDR	 | DCOM
+
+##### 使用 HTTP-SOAP
+
+Web 服务是可以通过 URL 寻址的资源，并通过编程向需要使用这些资源的客户端返回信息。客户端使用 Web Services 时不必考虑其实现细节。Web Services 使用称为“合约”的严格定义的接口，此接口采用 Web 服务说明语言 (WSDL) 文件描述。
+
+.NET Remoting 对象可以集成在 IIS 中，作为 Web 服务提供。任何可以使用 WSDL 文件的客户端都可以按照 WSDL 文件中指定的合约，对 Remoting 对象执行 SOAP 调用。IIS 使用 ISAPI 扩展将这些请求路由到相应的对象。这样，Remoting 对象就可以作为 Web 服务对象来使用，从而充分发挥 .NET 框架基础结构的作用。如果您希望不同平台/环境的程序均能够访问对象，可以采用这种配置。这种配置便于客户端通过防火墙访问您的 .NET 对象。
+
+![图10 .NET 使用 HTTP-SOAP](/images/post/20160630-remoting-http-soap.gif)
+
+图10 .NET 使用 HTTP-SOAP
+
+##### 使用 SOAP-HTTP 通道
+
+默认情况下，HTTP 通道使用 SOAP 格式化程序。因此，如果客户端需要通过 Internet 访问对象，可以使用 HTTP 通道。因为这种方法使用 HTTP，所以此配置允许通过防火墙远程访问 .NET 对象。只需要按前一节中介绍的方法将这些对象集成在 IIS 中，即可将它配置为 Web 服务对象。随后，客户端就可以读取这些对象的 WSDL 文件，使用 SOAP 与 Remoting 对象通信。
+
+##### 使用 TCP 通道
+
+默认情况下，TCP 通道使用二进制格式化程序。此格式化程序以二进制格式对数据进行序列化，并使用原始 socket 在网络中传送数据。如果对象部署在受防火墙保护的封闭环境中，此方法是理想的选择。这种方法使用 socket 在对象之间传递二进制数据，因此性能极佳。由于它使用 TCP 通道来提供对象，因此在封闭环境中具有低开销的优点。由于防火墙和配置的问题，此方法不宜在 Internet 上使用。
+
+
+![图11 .NET 使用 TCP 通道](/images/post/20160630-remoting-tcp-channel.gif)
+
+图11 .NET 使用 TCP 通道
+
+##### 使用非托管的 COM 组件
+
+可以通过 COM Interop Service 调用非托管的传统 COM 组件。当 .NET Remoting 客户端对象创建 COM 对象的实例时，该对象通过运行时可调用包装程序 (RCW) 来提供。其中，RCW 担当真正的非托管对象的代理。对于 .NET 客户，这些包装程序看起来和 .NET 客户端的任何其他托管类一样。但实际上，它们仅仅是托管 (.NET) 和非托管 (COM) 代码之间的封送调用。
+
+同样地，您可以将 .NET Remoting 服务器对象提供给传统 COM 客户端。当 COM 客户端创建 .NET 对象的实例时，该对象通过 COM 可调用包装程序 (CCW) 来提供。其中，CCW 担当真正的托管对象的代理。
+　　
+这两种方案都使用 DCOM 通信。如果环境中既有传统的 COM 组件，又有 .NET 组件，那么这种互操作性将为您提供便利。
+　　
+#### 总结
+
+Microsoft .NET 框架提供了强大、可扩展、独立于语言的框架，适合开发可靠、可伸缩的分布式系统。.NET Romoting 框架提供了根据系统需求进行远程交互的强大手段。.NET Remoting 实现了与 Web 服务的无缝集成，并提供了一种方法，可以提供 .NET 对象以供跨平台访问。
+
+### Java 中的 XML Web Services
+
+Java RMI 与远程对象进行交互，其实现是需要基于 Java 的模型。此外,它没有使用 Web Services 和基于 HTTP 的消息传递。现在，已经出现了大量的软件来支持基于 Java 的 Web Services。JAX-WS (Java API for XML Web Services) 就是作为 Web Services 消息息和远程过程调用的规范。它允许一个调用基于Java的web服务使用Java RMI(即。,相对透明的程序员)。JAX-WS 的一个目标是平台互操作性。其 API 使用 SOAP 和WSDL。双方不需要 Java 环境。
+
+#### 创建一个 RPC 端点
+
+在服务器端,进行下面的步骤来创建一个 RPC 端点:
+* 定义一个接口(Java接口)；
+* 实现服务；
+* 创建一个发布者,用于创建服务的实例，并发布一个服务名字。
 
 在客户端:
+* 创建一个代理(客户端存根)。wsimport 命令根据 WSDL 文档,创建一个客户机存根；
+* 编写一个客户端，通过代理创建远程服务的一个实例(存根),调用它的方法。
 
-创建一个代理(客户端存根)。wsimport命令以WSDL文档,创建一个客户机存根
+JAX-RPC 执行流程如下:
+* Java 客户机调用存根上的方法(代理)；
+* 存根调用适当的 Web 服务；
+* Web 服务器被调用并指导 JAX-WS 框架；
+* 框架调用实现；
+* 实现返回结果给该框架；
+* 该框架将结果返回给 Web 服务器；
+* 服务器将结果发送给客户端存根；
+* 客户端存根返回信息给调用者；
 
-编写一个客户端,通过代理创建远程服务的一个实例(存根),调用它的方法
+![图12 JAX-WS 调用流程](/images/post/20160630-rpc-jax-ws_flow.png)
 
-图7。jax - ws调用流
-图7。jax - ws调用流
-执行流程中使用jax - RPC是几乎所有其他RPC系统的流动除了框架通常是由服务器的web服务器。如图7所示:
+图12 JAX-WS 调用流程
 
-Java客户机调用存根上的方法(代理)
-存根调用适当的web服务
-web服务器被调用并指导jax - ws框架
-框架调用实现
-该框架的实现返回结果
-该框架将结果返回给web服务器
-服务器将结果发送给客户端存根
-客户端存根返回给调用者的信息
-除了肥皂
-当肥皂,仍然是广泛部署,许多环境中把它支持机制,要么是更轻的重量,更容易理解,或者适应web交互模型更干净。例如,Google的api支持SOAP接口降至2006年,提供替代的AJAX,xml - rpc和休息。一个匿名的微软员工批评SOAP过于复杂,因为“我们希望我们的工具来阅读它,而不是人”。报价是否准确与否其实并不重要因为SOAP显然是一个复杂和highly-verbose格式。
+### 超越 SOAP
 
-AJAX
-原始设计的web浏览器的一个限制是web页面提供的非动态的交互模型。web浏览器是建立同步equest-response交互模型。发送一个请求到服务器,服务器返回整个页面。只是没有更新部分页面的好方法。唯一可行的方法是利用帧(一旦他们成为可用)和不同的页面加载到每一帧。甚至是笨重和限制性。是什么这是改变了文档对象模型和JavaScript的出现,使得一个以编程方式更改web页面的各个部分。另一个关键因素是需要与服务器进行交互以非阻塞方式,仍然允许用户与页面交互即使底层JavaScript从服务器仍在等待结果。该组件被称为AJAX。
-AJAX代表异步JavaScript和XML。让我们看看这些三项:
+SOAP 虽然仍然是广泛部署应用，但在许多环境中很多厂商已经抛弃了 SOAP，转而使用其他更轻量、更容易理解、或者与 Web 交互模型更干净的机制。例如,Google 的 API 在2006年后就不再支持 SOAP 接口，而是使用AJAX、XML-RPC 和 REST 作为替代。一个匿名的微软员工批评 SOAP 过于复杂，因为“我们希望我们的工具来阅读它,而不是人”。不管上述言论是否准确，有一点是可以肯定的，SOAP 显然是一个复杂和高度冗长的格式。
 
-它是异步的,因为客户端从服务器不会阻塞,等待结果。
+#### AJAX
 
-AJAX集成到JavaScript和设计为调用浏览器解释一个web页面的一部分。使用HTTPRequest从JavaScript调用AJAX请求。JavaScript也可能修改文档对象模型,定义了页面的样子
+Web 浏览器最初的设计，是为 Web 页面提供非动态的交互模型。Web 浏览器是建立在同步的请求-响应(request-response)的交互模型。发送一个请求到服务器,服务器返回整个页面。在当时没有更新部分页面的好方法，而唯一可行的方法是利用帧，即将不同的页面加载到每一帧，其实现是笨重的，也有很大的限制性。而改变了这一切的关键因素是：
+* 文档对象模型（Document Object Model）和 JavaScript 的出现,使得可以以编程方式来更改 Web 页面的各个部分；
+* AJAX 提供了与服务器以非阻塞方式进行交互，即允许底层 JavaScript 在等待服务器结果时，用户仍然可以与页面进行交互。
 
-数据发送和接收XML文档。
+AJAX 全称是 Asynchronous JavaScript And XML（异步的 JavaScript 和 XML）。让我们看看这些三项:
+* 它是异步的,因为客户端等待服务器结果不会被阻塞；
+* AJAX 集成到了 JavaScript，作为浏览器解释 Web 页面的一部分。JavaScript 使用 HTTPRequest 来调用 AJAX 请求。JavaScript 也可能修改文档对象模型，定义了页面的样子；
+* 数据以 XML 文档形式发送和接收。（在后期发展中，AJAX 也支持其他的数据格式，比如 JSON）
 
-AJAX迎来了众所周知的Web 2.0:高度交互的服务,如谷歌地图,写,和许多其他人。基本上,它允许JavaScript发出HTTP请求,获取和处理结果,页面元素而不刷新整个页面。在大多数浏览器[6]请求的格式:
+AJAX 在推动 Web 2.0 的过程中发挥了重要的，比如产生了很多高度交互的服务,如Google Maps、Writely等。基本上,它允许 JavaScript 发出HTTP 请求，获取和处理结果，刷新局部页面元素而不是整个页面。在大多数浏览器请求的格式如下:
 
 new XMLHttpRequest()
 xmlhttp.open(“HEAD”, “index.html”, true)Tell object:
-JavaScript代码告诉你发行的XMLHttpRequest对象类型的请求,请求的URL,函数调用请求的时候,和身体的请求一起发送的信息
 
-注意,AJAX是远离RPC。它并没有提供一个功能接口服务器功能。这也是专门为web浏览器。
+### REST
 
-休息
-虽然SOAP创建自己的消息传递协议,它只是碰巧运输通过HTTP REST(REpresentational State Transfer)的方法是保持网络的原理和使用HTTP协议的核心部分。
+SOAP 在创建自己的消息传递协议时是基于HTTP，但实际上 REST (REpresentational State Transfer) 的方式才是保持 Web 的原理和使用 HTTP 协议的核心部分。
 
-原始的HTTP协议已经定义了四个命令,清晰地映射到各种操作,可以进行数据(一个“资源”):
-
-(插入)
-(选择)
-(更新后)
-删除(删除)
-其他背后的理念是使用这些HTTP命令请求数据的操作数据和影响。作为HTTP协议的一部分,其他使用url引用对象和操作,因为它们提供天使的命名格式和属性值列表的参数(如。,http://mydomain.com/mydata/getlist?item=123&format=brief)。
+原始的 HTTP 协议已经定义了四个命令，清晰地映射到各种数据(定义为“资源”)操作:
+* PUT (插入)
+* GET (选择)
+* POST (更新)
+* DELETE (删除)
+ 
+REST 其背后的理念是使用这些 HTTP 命令来请求和操作数据。作为 HTTP协议的一部分,REST 使用 URL 来引用对象和操作，如 `http://mydomain.com/mydata/getlist?item=123&format=brief`。
 
 在与集团进行交互的一个例子,考虑这些操作:
 
-得到一个用户的友情链接的快照:
-HTTP GET / /rpc.bloglines.com/listsubs
-HTTP身份验证处理的用户标识和身份验证
-获取一个特定订阅信息:
-HTTP GET http://rpc.bloglines.com/getitems?s= { subid }
-其他模型为面向资源的服务是非常合理的,如博客订阅,亚马逊,flikr del.icio。我们等。
+考虑这个 HTTP 操作列表的例子:
 
-作为一个进一步的例子,考虑这个HTTP操作列表的部分:
-
+```
 HTTP GET //www.parts-depot.com/parts
-这个命令将返回一个XML文档,其中包含部分的列表。注意,返回的是没有一个网页,只是一个XML数据结构包含所请求的数据。
+```
 
+这个命令将返回一个 XML 文档,其中包含部分的列表。注意,返回的不是一个网页,只是一个包含所请求的数据 XML 数据结构。
+
+```xml
 <?xml version="1.0"?>
 <p:Parts xmlns:p="http://www.parts-depot.com" 
          xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -835,11 +916,17 @@ HTTP GET //www.parts-depot.com/parts
       <Part id="00347" xlink:href="http://www.parts-depot.com/parts/00347"/>
       <Part id="00348" xlink:href="http://www.parts-depot.com/parts/00348"/>
 </p:Parts>
-特定部分的详细信息,会发送一个HTTP get命令查询特定的部分:
+```
 
+要特定部分的详细信息,发送一个HTTP get 命令:
+
+```
 HTTP GET //www.parts-depot.com/parts/00345
+```
+
 这将返回一个特定的信息部分:
 
+```xml
 <?xml version="1.0"?>
 <p:Part xmlns:p="http://www.parts-depot.com"   
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -850,18 +937,21 @@ HTTP GET //www.parts-depot.com/parts/00345
       <UnitCost currency="USD">0.10</UnitCost>
       <Quantity>10</Quantity>
 </p:Part>
-注意,这是一个例子和部分查询可以有一部分作为URL参数数量。例如
+```
 
+注意，上面例子简化了 partid 作为 URL 的参数。例如：
+
+```
 HTTP GET //www.parts-depot.com/parts?partid=00345
-休息不是RPC,而是有一个类似的请求-响应模式。制定的透明度要求,封送数据,并解析响应不属于休息。休息中使用非常广泛的支持和服务,如Yahoo !搜索api,Ruby on Rails,笨蛋,开放活力服务。最后是XM-Sirius电台的编程接口。URL获取频道列表:
+```
 
-svc://Radio/ChannelList
-并在一个特定时间特定渠道的信息,你可以请求
+REST 不是 RPC，但也有类似的请求-响应模式。制定透明度请求、封送数据、解析响应这些不属于 REST。REST 应用非常广泛，如 Yahoo! Search API、Ruby on Rails、Twiter 和 Open Zing Services 等。
 
-svc://Radio/ChannelInfo?sid=001-siriushits1&ts=2012091103205
-谷歌协议缓冲区:封送处理
-有些时候RPC和web服务是需要的,但一个程序员只是想简化的任务编组和解封网络上的数据。谷歌协议缓冲区用于序列化结构化数据提供了一种有效的机制,使它容易编码数据在网络和解码接收的数据。协议缓冲区是一个紧凑的二进制格式更简单,小,速度比XML。他们是独立于语言的,只定义数据类型。每个消息是一个结构化的数据集名称,类型和值。消息结构定义在一个高层次的格式,类似于许多接口定义语言。然后编译这个文件来为你选择的语言生成转换例程。协议缓冲区中广泛使用谷歌。目前超过48000种不同的消息类型定义。使用它们为被广泛运用的、类似rpc消息传递以及持久性存储,需要将数据转换成标准的串行形式写入到一个文件中。一个协议缓冲区定义的一个例子,从谷歌的协议缓冲区开发者指南:
+### Google Protocol Buffers:封送处理
 
+有些时候，不仅仅是为了 RPC 和 Web Services 的需要，程序员只是想简化对网络上的数据的封送编组和解封的操作。Google Protocol Buffers 就是为序列化结构化数据提供了一种有效的机制,使它容易对网络上的数据进行编码和解码。Protocol Buffers 是一个紧凑的二进制格式比XML 更简单、体积更小、速度更快。他们是独立于语言的，只定义数据类型。每个消息是对数据名称、类型和值的结构化集合。消息结构定义在一个高级别的格式,类似于许多接口定义语言。然后文件可以根据你选择的语言来编译转换成与该语言相应的格式。Protocol Buffers 在 Google 中广泛使用。目前已经有超过48000种不同的消息类型定义。Protocol Buffers 可以被运用在类 RPC 消息传递以及持久性存储(将数据转换成标准的串行形式写入到一个文件中）。下面是一个定义 Protocol Buffers 的例子:
+
+```
 message Person {
   required string name = 1;
   required int32 id = 2;
@@ -880,30 +970,44 @@ message Person {
 
   repeated PhoneNumber phone = 4;
 }
-请注意,这只定义了数据结构,而不是功能。一个示例使用这个结构是:
+```
 
+请注意,这只定义了数据结构,而不是功能。使用这个结构的例子是:
+
+```
 Person person;
 person.set_name("John Doe");
 person.set_id(1234);
 person.set_email("jdoe@example.com");
 fstream output("myfile", ios::out | ios::binary);
 person.SerializeToOstream(&output);
-即使紧凑的XML版本相比,协议缓冲区更有效的在时间和空间解析。同样,从开发者指南,如果我们比较这个XML版本:
+```
 
+即使与紧凑的 XML 版本相比，Protocol Buffers 在时间和空间方面，解析将更加有效。下面是两者的对比.
+
+这个是 XML 格式：
+
+```
 <person>
     <name>John Doe</name>
     <email>jdoe@example.com</email>
 </person>
-这个没有编译的协议缓冲区:
+```
 
+这个没有编译的 Protocol Buffers 格式:
+
+```
 person {
    name: "John Doe"
    email: "jdoe@example.com"
 }
-协议产生的二进制消息缓冲大约是28字节长,大概需要100 - 200 ns解析。XML版本,相比之下,在69个字节长(2.5倍),从5000年到10000年ns解析(50倍的时间)。
+```
 
-JSON
-花药封送处理格式,得到了相当大的声望是JSON。这不是一个二进制格式如谷歌协议缓冲区,因此适合使用在消息通过HTTP传输负载。JSON是基于JavaScript,人类可读和可写,容易解析。这是介绍“无脂替代XML”。目前,转换器存在添加了50多种语言和远程过程调用json - rpc。记住,这只是一个消息传递格式和JSON并没有试图提供RPC库和支持服务发现、绑定、托管和垃圾收集。
+Protocol Buffers 产生的二进制消息大约是28字节长，解析耗时大概需要100-200ns。相比之下,XML 版本需要69个字节长(是 Protocol Buffers 的 2.5倍),耗时是5000-10000ns(是 Protocol Buffers 的 50倍)。
+
+### JSON
+
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它基于 ECMAScript 的一个子集。JSON 采用完全独立于语言的文本格式，但是也使用了类似于 C 语言家族的习惯（包括C、C++、C#、Java、JavaScript、Perl、Python 等）。这些特性使 JSON 成为理想的数据交换语言。易于人阅读和编写，同时也易于机器解析和生成。JSON 不是一个诸如 Google Protocol Buffers 的二进制格式 ,因此适合使用基于 HTTP的消息传递。JSON 是可以作为 XML 替代品，在远程过程调用中，很多语言都支持 JSON-RPC。记住，这只是一个消息传递格式，JSON 并没有试图提供 RPC 库来支持服务发现、绑定、托管和垃圾收集。
 
 
 ## 参考引用
@@ -913,7 +1017,7 @@ JSON
 * <http://queue.acm.org/detail.cfm?id=1142044>
 * <https://en.wikipedia.org/wiki/Web_Services_Description_Language>
 * <https://msdn.microsoft.com/en-us/library/ms973864.aspx>
-
+* <https://msdn.microsoft.com/en-us/library/bb985129.aspx>
 
 
 <http://www.yesky.com/224/1606224all.shtml>
