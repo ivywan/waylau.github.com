@@ -32,6 +32,9 @@ Oracle VM VirtualBox | |
 TeamViewer | | 
 Toad for DB2 | |
 MySQL Workbench | | 
+xshll | |
+xftp | |
+SVN 客户端 | |
 PicPick | |
 百度音乐 | | 
 百度云 | | 
