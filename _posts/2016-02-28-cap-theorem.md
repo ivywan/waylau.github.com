@@ -13,7 +13,7 @@ tags: [CAP,Distributed,分布式,架构]
 
 ## 什么是 CAP 理论
 
-![](http://99btgc01.info/uploads/2016/03/001.jpg)
+![图1 CAP 定理](/images/post/20160228-cap-theorem-001.jpg)
 
 
 
@@ -50,7 +50,7 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲分区（CA 模型）
 
-![](http://99btgc01.info/uploads/2016/03/002.jpg)
+![图 CAP 定理](/images/post/20160228-cap-theorem-002.jpg)
 
 
 举例：
@@ -67,7 +67,7 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲可用性（CP 模型）
 
-![](http://99btgc01.info/uploads/2016/03/003.jpg)
+![图 CAP 定理](/images/post/20160228-cap-theorem-003.jpg)
 
 
 举例：
@@ -83,7 +83,7 @@ tags: [CAP,Distributed,分布式,架构]
 
 ### 牺牲一致性（AP 模型）
 
-![](http://99btgc01.info/uploads/2016/03/004.jpg)
+![图 CAP 定理](/images/post/20160228-cap-theorem-004.jpg)
 
 
 举例：
