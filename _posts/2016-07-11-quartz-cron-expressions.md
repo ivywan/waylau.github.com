@@ -10,6 +10,8 @@ tags: [Quartz]
 
 [Quartz](http://www.quartz-scheduler.org/) 是一个完全由 Java 编写的开源企业级作业调度框架。在处理 CronTrigger  进行周期性任务触发时，需要进行时间的配置，其中就需要使用 Cron Expressions。本文将对 Cron Expressions 进行详细讲解。
 
+<!-- more -->
+
 ## 什么是 Quartz Cron Expressions
 
 [Cron Expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression)（Cron 表达式）是用来展示时间集合的字符串。在不同的系统或者框架上，Cron Expressions 的标准会有所差异。对于 Quartz Cron Expressions 来说，它被用来配置 CronTrigger 实例，由空格隔开分7个子表达式：
