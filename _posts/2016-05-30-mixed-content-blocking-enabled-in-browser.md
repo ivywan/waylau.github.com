@@ -42,7 +42,8 @@ Mixed Content: The page at 'https://59.255.134.5/gov/' was loaded over HTTPS, bu
 
 缺点：每次重启浏览器，都需要重新点击设置，比较繁琐。
 
-![](http://99btgc01.info/uploads/2016/05/001.png)
+![](/images/post/20160530-mixed-content-google.png)
+ 
 
 
 方法2：
@@ -50,13 +51,13 @@ Mixed Content: The page at 'https://59.255.134.5/gov/' was loaded over HTTPS, bu
 Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后面添加
 `--allow-running-insecure-content` 参数。打开浏览器后就会自动启动混合模式。
 
-![](http://99btgc01.info/uploads/2016/05/003.png)
+![](/images/post/20160530-mixed-content-google-2.png)
 
 
 
 效果：
 
-![](http://99btgc01.info/uploads/2016/05/002.png)
+![](/images/post/20160530-mixed-content-google-3.png)
 
 ### IE
 
@@ -66,14 +67,14 @@ Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后�
 
 缺点：每次重启浏览器，都需要重新点击，比较繁琐。
 
-![](http://99btgc01.info/uploads/2016/05/004.png)
+![](/images/post/20160530-mixed-content-ie.png)
 
 
 方法2：
 
 对 IE 进行设置，启动显示混合内容。
 
-![](http://99btgc01.info/uploads/2016/05/005.png)
+![](/images/post/20160530-mixed-content-ie.png)
 
 ### Firefox 
 
@@ -83,14 +84,14 @@ Chrome 桌面快捷方式上右击，“属性”，在“目标”路径的后�
 
 缺点：每次重启浏览器，都需要重新点击设置，比较繁琐。
 
-![](http://99btgc01.info/uploads/2016/05/006.png)
+![](/images/post/20160530-mixed-content-firefox.png)
 
 方法2：
 
 在浏览器输入 about:config 切换到设置页面。
 设置 `security.mixed_content.block_active_content` 选项值为 `false`
 
-![](http://99btgc01.info/uploads/2016/05/007.png)
+![](/images/post/20160530-mixed-content-firefox-2.png)
 
 ## 参考引用
 
